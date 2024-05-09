@@ -6,6 +6,7 @@ import iconFacebook from "./iconFacebook.png";
 import iconLinkedin from "./iconLinkedin.png";
 import ads from "./ads.jpeg";
 import mi from "./mi.png";
+import placeholderBanner from "./placeholderBanner.jpg"
 
 export {
   logo,
@@ -16,4 +17,5 @@ export {
   iconLinkedin,
   ads,
   mi,
+  placeholderBanner
 };

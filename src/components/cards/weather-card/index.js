@@ -1,10 +1,12 @@
-const WeatherCard = ({ weather, time }) => {
+import "../../../App.css";
+
+const WeatherCard = ({ name, temp, icon, date, time }) => {
   return (
     <div className="weatherCard row mx-0 align-items-center">
       <div className="col-7 temperature d-flex p-0">
         <div>
           <img
-            src={weather.current.condition.icon}
+            src={icon}
             alt="weather icon"
             style={{ height: 38, width: 38 }}
           />
@@ -16,7 +18,7 @@ const WeatherCard = ({ weather, time }) => {
               fontWeight: 400,
             }}
           >
-            {weather.current.temp_f} °F
+            {temp} °F
           </div>
         </div>
         <div>
@@ -27,7 +29,7 @@ const WeatherCard = ({ weather, time }) => {
               paddingTop: 10,
             }}
           >
-            {weather.location.name}
+            {name}
           </div>
         </div>
       </div>
@@ -51,7 +53,7 @@ const WeatherCard = ({ weather, time }) => {
             // marginTop: -20,
           }}
         >
-          Saturday, 24 Feb
+          {date}
         </div>
       </div>
     </div>

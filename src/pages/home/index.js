@@ -219,23 +219,25 @@ export default function Home() {
               </div>
             </div>
             <div className="row m-0 justify-content-md-start p-0 px-xl-5 px-auto">
-              <div className="col-12 col-xl-10 pb-4 ">
+              <div className="col-12 col-xl-10 pb-4">
                 <PrimaryCarousel
                   title="Recommended For You"
                   cardData={cardData}
                   slidesToShow={slidesToShow}
                 />
-                <div className="row m-0 ">
-                  {cardData.map((data) => {
-                    return <LiveStreamCard key={data.id} {...data} />;
-                  })}
-                </div>
 
-                <h1>hellow</h1>
-                <ReactPlayer
-                  className="react-player"
-                  url="https://www.youtube.com/watch?v=l-nMKJ5J3Uc"
-                />
+                {!isShow ? 
+                  (
+                    <>
+                      <h2>Hellow</h2>
+                      <ReactPlayer
+                        className="react-player"
+                        url="https://www.youtube.com/watch?v=l-nMKJ5J3Uc"/>
+
+                    </>
+                  ) : null
+                }
+
                 <PrimaryCarousel
                   title="Top Tech Trend"
                   cardData={cardData}
