@@ -74,7 +74,7 @@ export default function HomeHeroBanner() {
                 Genres
               </div>
               <div className="text-family fs-4 fw-normal text-white">
-                New's Highlights
+                News Highlights
               </div>
               <div className="d-flex  py-4">
                 <PrimaryButton

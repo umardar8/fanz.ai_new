@@ -8,20 +8,23 @@ import { FaWifi } from "react-icons/fa6";
 
 export default function LiveStreamCard(props) {
   return (
-    <div className="col-11 col-md-4 col-3 pb-5">
+    <div className="col-sm-12 col-sm-6 col-md-4 pb-5">
       <img
         src={props.cardimg}
         alt=""
         style={{ height: "25vh" }}
-        className="rounded shadow-1 mb-2 "
+        className="rounded shadow-1 mb-2 w-100 "
       />
-      <div className="d-flex justify-content-between  py-1">
-        <div className="text-family fs-4 fw-normal text-white">
+      <div className="d-flex justify-content-between py-1">
+        <div className="text-family fw-normal text-white pe-2 col-xs-8"
+        style={{fontSize: "calc(0.8em + 1vw)"}}>
           {props.head}
         </div>
         <PrimaryButton
+          btnClassName="col-xs-4"
           label="Live"
-          btnStyle={{
+          size="sm"
+          btnStyle={{                
             background: "#FE4703",
             color: "white",
           }}

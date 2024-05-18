@@ -448,3 +448,7 @@
   -webkit-text-fill-color: transparent !important;
   /* background: linear-gradient(#993399, #6600ff); */
 }
+
+.carousel-caption {
+  text-align: left;
+}

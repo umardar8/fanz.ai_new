@@ -10,7 +10,6 @@ import { HeroImage } from "../../assets";
 import { GrUp } from "react-icons/gr";
 import AdsCard from "../../components/cards/ads-card";
 import PriceListCard from "../../components/cards/price-list-card";
-import LiveStreamCard from "../../components/cards/live-stream-card";
 import ReactPlayer from "react-player";
 import PrimaryModal from "../../components/modal";
 import { TiWeatherPartlySunny } from "react-icons/ti";
@@ -228,13 +227,12 @@ export default function Home() {
 
                 {!isShow ? 
                   (
-                    <>
-                      <h2>Hellow</h2>
+                    <div className="row pt-5 justify-content-center">
                       <ReactPlayer
                         className="react-player"
                         url="https://www.youtube.com/watch?v=l-nMKJ5J3Uc"/>
 
-                    </>
+                    </div>
                   ) : null
                 }
 

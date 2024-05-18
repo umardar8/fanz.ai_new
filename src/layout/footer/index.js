@@ -108,7 +108,7 @@ export default function WebFooter() {
             <p className="footer-copyright-text">
               <a className="footer-copyright-link" href="#" target="_self">
                 {" "}
-                ©2023. FANz.ai All rights reserved.{" "}
+                ©2024. FANz.ai All rights reserved.{" "}
               </a>
             </p>
           </div>
