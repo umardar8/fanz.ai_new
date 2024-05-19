@@ -174,7 +174,7 @@ export default function HomeHeroBanner() {
             style={{
               background: `linear-gradient(to top, #150b27 14%, #4f349d 91%)`,
               height: "40vh",
-              width: isSliderHovered ? "55px" : "18px",
+              width: isSliderHovered ? "55px" : "24px",
               borderTopLeftRadius: 25,
               borderBottomLeftRadius: 25,
               transition: "width 0.3s ease",

@@ -359,6 +359,11 @@
   font-size: calc(5px + 7 * ((100vw - 320px) / 680));
   font-family: "Montserrat", sans-serif;
 }
+.heading-3 {
+  /* font-size: 3.5rem; */
+  font-size: calc(12px + 7 * ((100vw - 320px) / 680));
+  font-family: "Montserrat", sans-serif;
+}
 
 .text-family {
   font-family: "Montserrat", sans-serif;
@@ -447,8 +452,4 @@
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   /* background: linear-gradient(#993399, #6600ff); */
-}
-
-.carousel-caption {
-  text-align: left;
 }
