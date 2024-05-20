@@ -10,6 +10,7 @@ import { HeroImage } from "../../assets";
 import { GrUp } from "react-icons/gr";
 import AdsCard from "../../components/cards/ads-card";
 import PriceListCard from "../../components/cards/price-list-card";
+import LiveStreamCard from "../../components/cards/live-stream-card";
 import ReactPlayer from "react-player";
 import PrimaryModal from "../../components/modal";
 import { TiWeatherPartlySunny } from "react-icons/ti";
@@ -85,13 +86,13 @@ export default function Home() {
         {/* {!isShow ? ( */}
         <div
           className="row position-absolute m-0 p-0 justify-content-between "
-          style={{ top: -35, height: "100%" }}
+          style={{ top: !isShow ? "-5%" : "10%", height: "100%" }}
         >
           <div
             className={
               !isShow
                 ? "col-11 col-md-4 col-xl-3  d-flex flex-column justify-content-between  p-0 m-0"
-                : "col-12 col-md-4 col-xl-3  d-flex justify-content-between align-items-start  p-0 m-0 "
+                : "col-12 col-md-4 col-xl-3  d-flex justify-content-between align-items-start border  px-0 m-0 "
             }
             style={{ height: "100%", zIndex: 4 }}
           >
@@ -105,7 +106,7 @@ export default function Home() {
                 <div
                   className="p-2 "
                   style={{
-                    background: "rgb(33, 48, 67, 0.8)",
+                    background: `rgb(33, 48, 67, 0.8)`,
                     borderTopRightRadius: "20px",
                     borderBottomRightRadius: "20px",
                     width: isWeather ? "400px" : "18px",
@@ -113,6 +114,11 @@ export default function Home() {
                     transition: "width 0.3s ease",
                     minHeight: "340px",
                   }}
+                  onMouseEnter={() => {
+                    setIsWeather(true);
+                    setIsPrice(false);
+                  }}
+                  onMouseLeave={() => setIsPrice(false)}
                 >
                   <WeatherPanel
                     btnClassName={
@@ -133,6 +139,11 @@ export default function Home() {
                     transition: "width 0.3s ease",
                     minHeight: "340px",
                   }}
+                  onMouseEnter={() => {
+                    setIsPrice(true);
+                    setIsWeather(false);
+                  }}
+                  onMouseLeave={() => setIsPrice(false)}
                 >
                   <PriceListCard
                     btnClassName={
@@ -160,7 +171,7 @@ export default function Home() {
           className="row mx-0 justify-content-end p-0 "
           style={{
             background: `linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)`,
-            marginTop: -95,
+            marginTop: "-10%",
             zIndex: 0,
           }}
         >
@@ -169,7 +180,7 @@ export default function Home() {
               className="row m-0 justify-content-md-start p-0 px-xl-5 px-auto "
               style={{
                 background: `linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)`,
-                backdropFilter: `blur(4px)`,
+                backdropFilter: "blur(4px)",
                 TopLeftRadius: 80,
                 BottomLeftRadius: 80,
               }}
@@ -225,16 +236,14 @@ export default function Home() {
                   slidesToShow={slidesToShow}
                 />
 
-                {!isShow ? 
-                  (
-                    <div className="row pt-5 justify-content-center">
-                      <ReactPlayer
-                        className="react-player"
-                        url="https://www.youtube.com/watch?v=l-nMKJ5J3Uc"/>
-
-                    </div>
-                  ) : null
-                }
+                {!isShow ? (
+                  <div className="row pt-5 justify-content-center">
+                    <ReactPlayer
+                      className="react-player"
+                      url="https://www.youtube.com/watch?v=l-nMKJ5J3Uc"
+                    />
+                  </div>
+                ) : null}
 
                 <PrimaryCarousel
                   title="Top Tech Trend"
@@ -262,7 +271,7 @@ export default function Home() {
           }}
         >
           <h5>
-            Breaking New's! Lorem Ipsum is simply dummy text of the printing and
+            Breaking News! Lorem Ipsum is simply dummy text of the printing and
             typesetting industry.
           </h5>
         </div>

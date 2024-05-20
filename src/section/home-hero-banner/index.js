@@ -28,29 +28,31 @@ export default function HomeHeroBanner() {
   return (
     <>
       <div
-        className="d-flex row mx-0 p-0"
+        className="d-flex row mx-0 px-0 position-relative"
         style={{
           backgroundImage: `url(${HeroImage})`,
           height: "99vh",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
+          marginBottom: "5%",
         }}
         onMouseEnter={() => setIsSliderHovered(true)}
         onMouseLeave={() => setIsSliderHovered(false)}
       >
         <div
-          className="row m-0 p-0 d-flex justify-content-between position-absolute "
+          className="row m-0 px-0 d-flex justify-content-between position-absolute align-items-end h-100"
           style={{
-            minHeight: `100vh`,
+            // minHeight: 100%,
             background: `linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)`,
+            paddingBottom: "5%",
           }}
         >
           <div
-            className="col-11 col-md-7 d-flex flex-column justify-content-center align-items-center py-5"
+            className="col-11 col-lg-6 col-xl-7 d-flex flex-column justify-content-center align-items-center py-5"
             // style={{ zIndex: "4" }}
           >
-            <div style={{ maxWidth: `80%` }} className="py-5">
+            <div style={{ maxWidth: "80%", paddingTop: "15%" }}>
               <PrimaryButton
                 label="Live"
                 btnStyle={{
@@ -133,14 +135,16 @@ export default function HomeHeroBanner() {
             </div>
           </div>
           <div
-            className="col-5 
-          d-none d-md-block"
+            className="col-lg-6 col-xl-5 
+          d-none d-lg-block"
           >
             <div
-              className="row m-0 d-flex justify-content-center align-items-end"
-              style={{
-                minHeight: `85vh`,
-              }}
+              className="row m-0 d-flex justify-content-center align-items-end "
+              style={
+                {
+                  // minHeight: 85vh,
+                }
+              }
             >
               <div
                 className="justify-content-center text-center"
@@ -150,7 +154,7 @@ export default function HomeHeroBanner() {
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
                   padding: 20,
-                  width: `22vw`,
+                  width: "380px",
                 }}
               >
                 <div className="text-family fs-4 fw-normal text-white py-3">
@@ -164,10 +168,12 @@ export default function HomeHeroBanner() {
           </div>
         </div>
         <div
-          className=" d-flex flex-column align-items-end justify-content-center pe-0 position-absolute pt-5 pt-md-1"
-          style={{
-            minHeight: `85vh`,
-          }}
+          className=" d-flex flex-column align-items-end justify-content-center pe-0  pt-5 pt-md-1"
+          style={
+            {
+              // minHeight: 85vh,
+            }
+          }
         >
           <div
             className="py-5 row m-0 px-0"

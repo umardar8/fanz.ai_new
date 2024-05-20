@@ -205,7 +205,7 @@ export default function WebHeader() {
                 whiteSpace: "nowrap",
               }}
             >
-              Breaking New's! Lorem Ipsum is simply dummy text of the printing
+              Breaking News! Lorem Ipsum is simply dummy text of the printing
               and typesetting industry.
             </h5>
           </div>
