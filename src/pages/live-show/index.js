@@ -36,7 +36,7 @@ export default function LiveShow() {
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (index) => {
     setActiveTab(index);
-    // NativeFancybox.show(cardData[activeTab][index].cardimg);
+    NativeFancybox.show(cardData[activeTab][index].cardimg);
   };
 
   // Fancy box
