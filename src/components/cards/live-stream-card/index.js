@@ -8,7 +8,7 @@ import { FaWifi } from "react-icons/fa6";
 
 export default function LiveStreamCard(props) {
   return (
-    <div className="col-sm-12 col-sm-6 col-md-4 pb-5">
+    <div className="col-sm-6 col-md-4 pb-5">
       <img
         src={props.cardimg}
         alt=""
