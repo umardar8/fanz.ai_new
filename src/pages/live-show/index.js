@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Stack } from "@chakra-ui/react";
 import LiveStreamCard from "../../components/cards/live-stream-card";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import { HeroImage } from "../../assets";
 import { placeholderBanner } from "../../assets";
 import Layout from "../../layout/web-layout";
@@ -11,10 +13,48 @@ import { MdOutlineWork } from "react-icons/md";
 import { GrTechnology } from "react-icons/gr";
 import { FaWifi } from "react-icons/fa6";
 import BaseColors from "../../constant";
-import { useEffect, useState } from "react";
+
+const cardData = [
+  [
+    { cardimg: HeroImage, head: "Education", year: "2024" },
+    { cardimg: HeroImage, head: "Health", year: "2024" },
+    { cardimg: HeroImage, head: "Career", year: "2024" },
+    { cardimg: HeroImage, head: "Tech", year: "2024" },
+    { cardimg: HeroImage, head: "Health", year: "2024" },
+    { cardimg: HeroImage, head: "Education", year: "2024" },
+    { cardimg: HeroImage, head: "Climate", year: "2024" },
+    { cardimg: HeroImage, head: "Tech", year: "2024" },
+    { cardimg: HeroImage, head: "Career", year: "2024" },
+    { cardimg: HeroImage, head: "Health", year: "2024" },
+    { cardimg: HeroImage, head: "Climate", year: "2024" },
+    { cardimg: HeroImage, head: "Education", year: "2024" },
+  ],
+];
 
 export default function LiveShow() {
   // state variables for responsive design
+  const [activeTab, setActiveTab] = useState(0);
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+    NativeFancybox.show(cardData[activeTab][index].cardimg);
+  };
+
+  // Fancy box
+  function Fancybox(data) {
+    const containerRef = useRef(null);
+    useEffect(() => {
+      const container = containerRef.current;
+      const delegate = data.delegate || "[datafancybox]";
+      const options = data.options || {};
+      NativeFancybox.bind(container, delegate, options);
+      return () => {
+        NativeFancybox.unbind(container);
+        NativeFancybox.close();
+      };
+    });
+    return <div ref={containerRef}>{data.children}</div>;
+  }
+
   const [isDesktop, setIsDesktop] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
@@ -39,21 +79,6 @@ export default function LiveShow() {
     };
   }, []);
 
-  const cardData = [
-    { cardimg: HeroImage, head: "Education", year: "2024" },
-    { cardimg: HeroImage, head: "Health", year: "2024" },
-    { cardimg: HeroImage, head: "Career", year: "2024" },
-    { cardimg: HeroImage, head: "Tech", year: "2024" },
-    { cardimg: HeroImage, head: "Health", year: "2024" },
-    { cardimg: HeroImage, head: "Education", year: "2024" },
-    { cardimg: HeroImage, head: "Climate", year: "2024" },
-    { cardimg: HeroImage, head: "Tech", year: "2024" },
-    { cardimg: HeroImage, head: "Career", year: "2024" },
-    { cardimg: HeroImage, head: "Health", year: "2024" },
-    { cardimg: HeroImage, head: "Climate", year: "2024" },
-    { cardimg: HeroImage, head: "Education", year: "2024" },
-  ];
-
   // Sidebar component
   const Sidebar = () => {
     // saved bootstrap of sidebar buttons in a variable to avoid repeating
@@ -61,7 +86,7 @@ export default function LiveShow() {
       "list-group-item mb-4 mx-3 px-4 py-4 rounded-pill list-group-item-action";
 
     return (
-      <div className="col-md-3 my-5 px-2 list-group">
+      <div className="col-md-2 my-5 px-2 list-group">
         <h2 className="text-white mx-4 mb-4 align-self-center">Categories</h2>
         <Stack
           spacing={4}
@@ -139,10 +164,10 @@ export default function LiveShow() {
   // Main content component
   const MainContent = () => {
     return (
-      <div className="col-md-9">
+      <div className="col-md-10">
         {/* carousel with caption and buttons */}
         <div
-          className="row m-0 p-0 d-flex border"
+          className="row m-0 p-0 d-flex justify-content-center"
           style={{
             height: "50vh",
             background: `url(${placeholderBanner})`,
@@ -150,10 +175,11 @@ export default function LiveShow() {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             overflow: "hidden",
+            borderRadius: "5px",
           }}
         >
           <div
-            className="col-10 d-flex flex-column justify-content-center ms-2"
+            className="col-10 d-flex flex-column justify-content-center ms-2 text-center"
             // style={{ zIndex: "4" }}
           >
             <div className="py-1 text-white">
@@ -162,26 +188,24 @@ export default function LiveShow() {
                 btnStyle={{
                   background: BaseColors.orange,
                   color: "white",
-                  margin: "10px 0"
+                  margin: "10px 0",
                 }}
                 size={isDesktop ? "sm" : "xs"}
                 leftIcon={<FaWifi />}
               />
-              <p className={isDesktop ? "heading-2" : "heading-3"}>League of Legends © • &#9872; France</p>
-              <p className="heading-1">
-                Watch live how the top teams
+              <p className={isDesktop ? "heading-2" : "heading-3"}>
+                League of Legends © • &#9872; France
               </p>
-              <p className="heading-1">
-                play FaZe Clan VS Mousesports
-              </p>
-                <PrimaryButton
-                  label="WATCH"
-                  // onClick={() => {
-                  //   console.log("Button clicked!");
-                  // }}
-                  // rightIcon={<FaPlay />}
-                  padding="20px"
-                />
+              <p className="heading-1">Watch live how the top teams</p>
+              <p className="heading-1">play FaZe Clan VS Mousesports</p>
+              <PrimaryButton
+                label="WATCH"
+                // onClick={() => {
+                //   console.log("Button clicked!");
+                // }}
+                // rightIcon={<FaPlay />}
+                padding="20px"
+              />
             </div>
           </div>
         </div>
@@ -245,18 +269,72 @@ export default function LiveShow() {
         </div>
 
         {/* Live Stream Cards */}
-        <div className="row m-0 p-0">
-          {cardData.map((data) => {
-            return <LiveStreamCard key={data.id} {...data} />;
-          })}
-        </div>
+        <Fancybox
+          options={{
+            Carousel: {
+              infinite: false,
+            },
+          }}
+        >
+          <div className="row m-0 p-0">
+            {cardData[activeTab].map((data, index) => {
+              return (
+                <div
+                  className="col-sm-12 col-sm-6 col-md-4 pb-5"
+                  key={index}
+                  onClick={() => handleTabClick(index)}
+                >
+                  <img
+                    src={data.cardimg}
+                    alt=""
+                    style={{ height: "25vh" }}
+                    className="rounded shadow-1 mb-2 w-100 "
+                  />
+                  <div className="d-flex justify-content-between py-1">
+                    <div
+                      className="text-family fw-normal text-white pe-2 col-xs-8"
+                      style={{ fontSize: "calc(0.8em + 1vw)" }}
+                    >
+                      {data.head}
+                    </div>
+                    <PrimaryButton
+                      btnClassName="col-xs-4"
+                      label="Live"
+                      size="sm"
+                      btnStyle={{
+                        background: "#FE4703",
+                        color: "white",
+                      }}
+                      leftIcon={<FaWifi />}
+                    />
+                  </div>
+                  <div
+                    style={{ color: BaseColors.textGrey, fontSize: "0.9rem" }}
+                  >
+                    {data.year}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8'>
+                                            {tabContents[activeTab].map((item, index) => (
+                                                <Link key={index} href={item.image} datafancybox="gallery" className={`${styles.shadow} w-full h-full group`}>
+                                                    <div className={` ${styles.box18}`}>
+                                                        <Image src={item.thumbnail} alt="Infinity Animations" width={468} height={263} className='min-h-[263px]' />
+                                                        <div className={styles.boxContent}> <FaEye size={34} /> </div>
+                                                    </div>
+                                                </Link>
+                                            ))}
+                                        </div> */}
+        </Fancybox>
       </div>
     );
   };
 
   return (
     <Layout>
-      <div className="row position-relative d-flex  mt-5 pt-5">
+      <div className="row position-relative d-flex  mt-5 pt-5 mx-0 px-0">
         <Sidebar />
         <MainContent />
       </div>
