@@ -6,10 +6,7 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
-<<<<<<< HEAD
     "@fancyapps/fancybox": "^3.5.7",
-=======
->>>>>>> eeb2bc3439ea2004d596827ff3d624b15127d0ff
     "@fancyapps/ui": "^5.0.36",
     "@reduxjs/toolkit": "^2.2.3",
     "@stream-io/video-react-sdk": "^0.6.7",
