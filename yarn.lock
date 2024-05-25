@@ -2307,14 +2307,9 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.0.tgz"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@fancyapps/fancybox@^3.5.7":
-  version "3.5.7"
-  resolved "https://registry.npmjs.org/@fancyapps/fancybox/-/fancybox-3.5.7.tgz"
-  integrity sha512-rcEtu8t+WnmqIDV/Wfm1yvy/nDdwc7YV25j9HLxGC2/WOsUhk9rcWg2nB8g1BrjRt9zaoADdjHTU6ILYTJzBBg==
-
 "@fancyapps/ui@^5.0.36":
   version "5.0.36"
-  resolved "https://registry.npmjs.org/@fancyapps/ui/-/ui-5.0.36.tgz"
+  resolved "https://registry.yarnpkg.com/@fancyapps/ui/-/ui-5.0.36.tgz#dd5117cb579e9fc85c06dc32c947be6105724fb2"
   integrity sha512-GMygQzp1MBTFNTT6AzpbL6pXTD6bTxwjmmpI1fe8Ozmmiseu8/g82Sudl1YhcbZmS4bJgaBOF5THDFGpXQ1fDw==
 
 "@floating-ui/core@^1.0.0":
