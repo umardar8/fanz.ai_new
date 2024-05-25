@@ -8,6 +8,7 @@ import Categories from "../../pages/categories";
 import LiveShow from "../../pages/live-show";
 import Auth from "../../pages/auth";
 import AdminDashboard from "../../dashboard/pages/admin-dashboard";
+import SuperAdminDashboard from "../../dashboard/pages/super-admin-dashboard";
 // import AdminDashboard from "../../dashboard/pages/admin-dashboard";
 
 export default function WebRoutes() {
@@ -24,6 +25,15 @@ export default function WebRoutes() {
           <Route path="/live-show" element={<LiveShow />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="/admin-dashboard/*" element={<AdminDashboard />} />
+          <Route
+            path="/super-admin-dashboard"
+            element={<SuperAdminDashboard />}
+          />
+          <Route
+            path="/super-admin-dashboard/*"
+            element={<SuperAdminDashboard />}
+          />
         </Routes>
       </Router>
     </>

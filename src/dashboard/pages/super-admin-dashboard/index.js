@@ -1,10 +1,10 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DashboardLayout from "../../../layout/dashboard-layout";
-import { SiTask } from "react-icons/si";
+import { HiMiniUsers } from "react-icons/hi2";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { MdOutlineRssFeed } from "react-icons/md";
-import Activity from "../activity";
+import Users from "../users";
 import LiveStream from "../live-stream";
 
 const pagesArr = [
@@ -14,18 +14,18 @@ const pagesArr = [
     icon: <AiOutlineAppstore />,
   },
   {
-    name: "Activity",
-    route: "activity",
-    icon: <SiTask />,
-  },
-  {
     name: "Live Stream",
     route: "live-stream",
     icon: <MdOutlineRssFeed />,
   },
+  {
+    name: "Users",
+    route: "users",
+    icon: <HiMiniUsers />,
+  },
 ];
 
-export default function AdminDashboard() {
+export default function SuperAdminDashboard() {
   const navigate = useNavigate();
   const userData = useSelector((a) => a.user);
   console.log(userData);
@@ -34,10 +34,8 @@ export default function AdminDashboard() {
     <DashboardLayout
       RouteContent={
         <Routes>
-          {/* <Route path="" element={<AdminDashboard />} /> */}
-          <Route path="activity" element={<Activity />} />
           <Route path="live-stream" element={<LiveStream />} />
-
+          <Route path="users" element={<Users />} />
           {/* <Route path="" element={<Institute />} />
           <Route path="user-registration" element={<UserRegistration />} />
           <Route path="*" element={<NotFound />} /> */}

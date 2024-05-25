@@ -10,10 +10,10 @@ const BaseColors = {
   danger: "#a23522",
   textGrey: "#d4d0db",
   yellow: "#efc90e",
-  orange: "#FE4703",
   gradientWhite: "rgb(255, 255, 255, 0.2)",
-  dashboardBg:
-    "linear-gradient(to right bottom, #0f0119, #11011f, #120025, #10012b, #0d0132, #14002f, #19002b, #1c0028, #1e001c, #1a0012, #120007, #000000)",
+  dashboardBg: "#1b1738",
+  // dashboardBg:
+  //   "linear-gradient(to right bottom, #0f0119, #11011f, #120025, #10012b, #0d0132, #14002f, #19002b, #1c0028, #1e001c, #1a0012, #120007, #000000)",
 };
 
 export default BaseColors;
