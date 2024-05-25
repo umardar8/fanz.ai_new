@@ -4,10 +4,10 @@ import { ReactNode } from "react";
 // import { fbSignout } from "../../../config/firebase/firebase-methods";
 import { useNavigate } from "react-router-dom";
 import { logo } from "../../assets";
-import PrimaryButton from "../../components/button";
 import BaseColors from "../../constant";
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import { MdLogout } from "react-icons/md";
+import { IoIosNotifications } from "react-icons/io";
 
 export default function DashboardLayout(props) {
   const navigate = useNavigate();
@@ -26,17 +26,17 @@ export default function DashboardLayout(props) {
     >
       <div className=" row m-0 p-0 ">
         <div
-          className=" col-3 d-flex flex-column justify-content-between py-3"
+          className=" col-2 d-flex flex-column justify-content-between py-3"
           style={{ minHeight: "90vh", background: BaseColors.dashboardBg }}
         >
           <div className="">
             <img src={logo} height="45rem" width="auto" />
             {children}
           </div>
-          <div className=" justify-content-center text-center">
+          <div className=" text-center">
             <div
-              className="d-flex m-0  rounded-pill justify-content-evenly align-items-center"
-              style={{ background: BaseColors.gradientWhite, maxWidth: "80%" }}
+              className="d-flex m-0  rounded-pill justify-content-evenly align-items-center "
+              style={{ background: BaseColors.gradientWhite }}
             >
               <div className="justify-content-center ">
                 <Avatar
@@ -53,18 +53,20 @@ export default function DashboardLayout(props) {
                 </h6>
               </div>
               <div className="justify-content-center ">
-                <MdLogout size={24} color="#531561" />
+                <MdLogout size={22} color="#262626" />
               </div>
             </div>
             {/* <PrimaryButton label="log out" /> */}
           </div>
         </div>
-        <div className="col-9 m-0 p-0" style={{ background: "#f1f1f1" }}>
+        <div className="col-10 m-0 p-0" style={{ background: "#ECECEE" }}>
           <div
             className="d-flex justify-content-end align-items-center  m-0 p-0"
-            style={{ background: BaseColors.white }}
+            style={{ background: BaseColors.white, minHeight: "5vh" }}
           >
-            <div className="">header</div>
+            <div className="px-3">
+              <IoIosNotifications color="#94939a" size={20} />
+            </div>
           </div>
           <div>{RouteContent}</div>
         </div>
