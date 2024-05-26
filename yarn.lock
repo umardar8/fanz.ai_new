@@ -2307,8 +2307,6 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.0.tgz"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 "@fancyapps/fancybox@^3.5.7":
   version "3.5.7"
   resolved "https://registry.npmjs.org/@fancyapps/fancybox/-/fancybox-3.5.7.tgz"
@@ -2317,16 +2315,6 @@
 "@fancyapps/ui@^5.0.36":
   version "5.0.36"
   resolved "https://registry.npmjs.org/@fancyapps/ui/-/ui-5.0.36.tgz"
-=======
-"@fancyapps/ui@^5.0.36":
-  version "5.0.36"
-  resolved "https://registry.yarnpkg.com/@fancyapps/ui/-/ui-5.0.36.tgz#dd5117cb579e9fc85c06dc32c947be6105724fb2"
->>>>>>> eeb2bc3439ea2004d596827ff3d624b15127d0ff
-=======
-"@fancyapps/ui@^5.0.36":
-  version "5.0.36"
-  resolved "https://registry.yarnpkg.com/@fancyapps/ui/-/ui-5.0.36.tgz#dd5117cb579e9fc85c06dc32c947be6105724fb2"
->>>>>>> 354cb79cda962d44aa82dfe44f9598f83fe651f1
   integrity sha512-GMygQzp1MBTFNTT6AzpbL6pXTD6bTxwjmmpI1fe8Ozmmiseu8/g82Sudl1YhcbZmS4bJgaBOF5THDFGpXQ1fDw==
 
 "@floating-ui/core@^1.0.0":
@@ -6251,6 +6239,11 @@ find-up@^5.0.0:
   dependencies:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
+
+flag-icons@^7.2.2:
+  version "7.2.2"
+  resolved "https://registry.npmjs.org/flag-icons/-/flag-icons-7.2.2.tgz"
+  integrity sha512-9cC2y77npwpNJ1Whl3iACVFd/vR7ZQe9AwN8BRDJU2sZROMpEzIC3tOT1qbRRm/QS9b9UTXBHEKAO4I6d7L0xg==
 
 flat-cache@^3.0.4:
   version "3.2.0"
