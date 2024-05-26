@@ -8,8 +8,9 @@ import {
   Td,
   TableCaption,
   TableContainer,
-} from '@chakra-ui/react'
-import { FaFilter } from "react-icons/fa6";
+} from '@chakra-ui/react';
+import PrimaryButton from '../button';
+import { FaUserPlus, FaFilter } from "react-icons/fa6";
 import { CiSquarePlus, CiFilter  } from "react-icons/ci";
 import { BsFilterSquare } from "react-icons/bs";
 import { MdEditNote, MdDeleteForever } from "react-icons/md";
@@ -83,8 +84,8 @@ export default function CustomTable() {
   <div className='col-sm-12'>
   <div className='d-flex justify-content-end mb-2'>
     {/* <FontAwesomeIcon icon={faFilter} style={{color: "#4c319a",}} /> */}
-    <CiFilter style={{fontSize: "2em", color: "#5c4999", marginRight: "10px"}} />
-    <CiSquarePlus style={{fontSize: "2em", color: "#5c4999"}} />
+    <PrimaryButton leftIcon={ <FaFilter style={{ fontSize: "1.5em", color: "gray" }} /> } btnStyle={{background: "transparent", marginRight: "10px" }} btnClassName="border rounded-1 shadow" />
+    <PrimaryButton leftIcon={ <FaUserPlus style={{ fontSize: "1.5em", color: "gray" }} /> } btnStyle={{background: "transparent"}} btnClassName="border rounded-1 shadow" />
 
   </div>
   <TableContainer>
