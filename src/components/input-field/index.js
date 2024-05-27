@@ -21,6 +21,7 @@ export default function InputField(props) {
     inputStyle,
     inputWidth,
     label,
+    isBlack,
   } = props;
 
   return (
@@ -28,7 +29,7 @@ export default function InputField(props) {
       <div className={label ? "row m-0" : null}>
         {label ? (
           <div className="col mb-1">
-            <div className="text-light" style={Styles.headerItem}>
+            <div className={isBlack ? "text-black" : "text-light"} style={Styles.headerItem}>
               {label}
             </div>{" "}
           </div>
