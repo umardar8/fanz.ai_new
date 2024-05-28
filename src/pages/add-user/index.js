@@ -5,7 +5,7 @@ import InputField from "../../components/input-field"
 import { Styles } from "../../styles"
 
 const inputStyle = {
-    borderRadius: 0,
+    borderRadius: '2px',
     height: "5vh",
     width: "100%",
     padding: "15px 20px",
@@ -16,6 +16,7 @@ const inputStyle = {
 export default function AddUser() {
     return (
         <div className="row container p-4 d-flex">
+            <h2 className="text-secondary justify-content-center d-flex">User Form</h2>
             <div className="col-12 align-items-center text-black px-4">
                 <Stack spacing={2} className="text-black" >
                     <InputField
@@ -47,12 +48,12 @@ export default function AddUser() {
                         inputStyle={inputStyle}
                     />
                     <div style={{ marginLeft: '10px' }}>
-                        <p className="my-1 text-black" style={Styles.headerItem}>Role </p>
+                        <p className="my-1 text-secondary" style={Styles.headerItem3}>Role </p>
                         <select
                             className="px-2" 
                             style={{ 
                                 border: `1px solid ${BaseColors.light_grey}`, 
-                                borderRadius: 0, 
+                                borderRadius: '2px', 
                                 color: BaseColors.light_grey, 
                                 height: '5vh', 
                                 width: '40%', 
@@ -68,13 +69,13 @@ export default function AddUser() {
                     <PrimaryButton
                         label="Add"
                         btnClassName="me-2"
-                        btnStyle={{ borderRadius: 0, marginEnd: "10px" }}
+                        btnStyle={{ borderRadius: '2px', marginEnd: "10px" }}
                         colorScheme="purple"
                     />
                     <PrimaryButton
                         label="Cancel"
                         variant="outline"
-                        btnStyle={{ borderRadius: 0, background: "transparent" }}
+                        btnStyle={{ borderRadius: '2px', background: "transparent" }}
                     />
                 </div>
             </div>

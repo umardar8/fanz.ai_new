@@ -21,6 +21,13 @@ export const Styles = {
     letterSpacing: "0.1rem",
     textDecoration: "none",
   },
+  headerItem3: {
+    fontWeight: "300",
+    fontSize: "1.1rem",
+    fontFamily: `Teko,sans-serif`,
+    letterSpacing: "0.1rem",
+    textDecoration: "none",
+  },
   slider_arrow_Prev: {
     // background: BaseColors.white,
     // border: "none",
