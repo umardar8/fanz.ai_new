@@ -29,7 +29,7 @@ export default function InputField(props) {
       <div className={label ? "row m-0" : null}>
         {label ? (
           <div className="col mb-1">
-            <div className={isBlack ? "text-black" : "text-light"} style={Styles.headerItem}>
+            <div className={isBlack ? "text-secondary" : "text-light"} style={isBlack ? Styles.headerItem3 : Styles.headerItem}>
               {label}
             </div>{" "}
           </div>
