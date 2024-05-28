@@ -99,10 +99,17 @@ export default function CustomTable() {
       <div className='row mt-2'>
         <div className='col-sm-12'>
           <div className='d-flex justify-content-end mb-2'>
-            {/* <FontAwesomeIcon icon={faFilter} style={{color: "#4c319a",}} /> */}
-            <PrimaryButton leftIcon={<IoFunnelOutline style={{ fontSize: "1.5em", color: "gray" }} />} btnStyle={{ background: "transparent", marginRight: "10px" }} btnClassName="border rounded-1" />
-            <PrimaryButton leftIcon={<IoPersonAddOutline style={{ fontSize: "1.5em", color: "gray" }} />} btnStyle={{ background: "transparent" }} btnClassName="border rounded-1" onClick={showModal} />
-
+            <PrimaryButton 
+              leftIcon={ <IoFunnelOutline style={{ fontSize: "1.5em", color: "gray" }} />} 
+              btnStyle={{ background: "transparent", marginRight: "10px" }} 
+              btnClassName="border rounded-1" 
+            />
+            <PrimaryButton 
+              leftIcon={<IoPersonAddOutline style={{ fontSize: "1.5em", color: "gray" }} />} 
+              btnStyle={{ background: "transparent" }} 
+              btnClassName="border rounded-1" 
+              onClick={showModal} 
+            />
           </div>
           <TableContainer>
             <Table variant='striped'>
@@ -126,11 +133,11 @@ export default function CustomTable() {
                   <Td>jessie.cremin@yahoo.com</Td>
                   <Td>West Cotyfurt</Td>
                   <Td>USA</Td>
-                  <Td>
-                    <PrimaryButton leftIcon={<MdEditNote style={{ fontSize: "1.5em" }} />} btnStyle={{ background: "transparent", width: "0px" }} btnClassName="p-0 m-0" />
-                    <PrimaryButton leftIcon={<MdOutlineDelete style={{ fontSize: "1.5em" }} />} btnStyle={{ background: "transparent", width: "5px" }} btnClassName="p-0 m-0" />
-                    {/* <MdEditNote style={{fontSize: "1.5em"}} />
-          <MdOutlineDelete style={{fontSize: "1.5em"}} /> */}
+                  <Td className='d-flex'>
+                    {/* <PrimaryButton leftIcon={<MdEditNote style={{ fontSize: "1.5em" }} />} btnClassName="p-0 m-0" />
+                    <PrimaryButton leftIcon={<MdOutlineDelete style={{ fontSize: "1.5em" }} />} btnClassName="p-0 m-0" /> */}
+                    <MdEditNote style={{fontSize: "1.5em"}} />
+                    <MdOutlineDelete style={{fontSize: "1.5em"}} />
                   </Td>
                 </Tr>
                 <Tr>
