@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InputField from "../../components/input-field";
 import PrimaryButton from "../../components/button";
 import BaseColors from "../../constant";
+import { Post } from "../../config/api-methods";
 import {
   logo,
   modalBackground,
@@ -43,6 +44,56 @@ export default function WebAuth() {
   //   console.log("Unable to retrieve your location");
   // }
 
+  // sign-in sign-up state
+  const [model, setModel] = useState({});
+
+  // handle data through field
+  const fillModel = (key, val) => {
+    setModel((prevModel) => ({
+      ...prevModel,
+      [key]: val,
+    }));
+  };
+
+  let signInUser = async () => {
+    try {
+      const res = await Post("/auth/signIn", model);
+      const { user } = res.data;
+      console.log(res.data);
+      // navigate("/appProduct");
+      // // Store the token securely (you may want to use more secure storage methods)
+      // localStorage.setItem("authToken", token);
+
+      // // Set the token in the headers for subsequent requests
+      // setAuthToken(token);
+
+      // Navigate to the appropriate dashboard based on the user role
+      // handleNavigation(user.role.toLowerCase());
+    } catch (error) {
+      console.error("signIn failed:", error);
+    }
+  };
+
+  let signUpUser = async () => {
+    console.log("Model data:", model);
+    try {
+      const res = await Post("/auth/signup", model);
+      const { user } = res.data;
+      console.log(res.data);
+      // navigate("/appProduct");
+      // // Store the token securely (you may want to use more secure storage methods)
+      // localStorage.setItem("authToken", token);
+
+      // // Set the token in the headers for subsequent requests
+      // setAuthToken(token);
+
+      // Navigate to the appropriate dashboard based on the user role
+      // handleNavigation(user.role.toLowerCase());
+    } catch (error) {
+      console.error("signIn failed:", error);
+    }
+  };
+
   return (
     <>
       <div className="row m-0 " style={{ background: "transparent" }}>
@@ -68,13 +119,15 @@ export default function WebAuth() {
           </div>
           {!isShow ? (
             <>
-              <h2 style={styles.title}>Login to your Account</h2>
+              <h2 style={styles.title}>signIn to your Account</h2>
               <div className="py-3 w-md-auto w-75 ">
                 <InputField
                   label="Email"
                   placeholder="Enter your Email address"
                   type="email"
                   inputWidth={"100%"}
+                  value={model.email ?? ""}
+                  onChange={(e) => fillModel("email", e.target.value)}
                 />
               </div>
               <div className="py-3 w-75 ">
@@ -83,10 +136,16 @@ export default function WebAuth() {
                   placeholder="Enter your Password"
                   type="password"
                   inputWidth={"100%"}
+                  value={model.password ?? ""}
+                  onChange={(e) => fillModel("password", e.target.value)}
                 />
               </div>
               <div className="py-3">
-                <PrimaryButton label="Login" btnStyle={styles.Button} />
+                <PrimaryButton
+                  label="signIn"
+                  btnStyle={styles.Button}
+                  onClick={signInUser}
+                />
               </div>
               <p
                 className="py-3"
@@ -114,12 +173,16 @@ export default function WebAuth() {
                   placeholder="Enter your First Name"
                   type="text"
                   inputWidth={"100%"}
+                  value={model.firstname ?? ""}
+                  onChange={(e) => fillModel("firstname", e.target.value)}
                 />
                 <InputField
                   label="Last Name"
                   placeholder="Enter your Last Name"
                   type="text"
                   inputWidth={"100%"}
+                  value={model.lastname ?? ""}
+                  onChange={(e) => fillModel("lastname", e.target.value)}
                 />
               </div>
               <div className="py-3 w-md-auto w-75 ">
@@ -128,6 +191,8 @@ export default function WebAuth() {
                   placeholder="Enter your Email address"
                   type="email"
                   inputWidth={"100%"}
+                  value={model.email ?? ""}
+                  onChange={(e) => fillModel("email", e.target.value)}
                 />
               </div>
               <div className="py-3 w-75 ">
@@ -136,12 +201,15 @@ export default function WebAuth() {
                   placeholder="Enter your Password"
                   type="password"
                   inputWidth={"100%"}
+                  value={model.password ?? ""}
+                  onChange={(e) => fillModel("password", e.target.value)}
                 />
               </div>
               <div className="py-3">
                 <PrimaryButton
                   label="Create Account"
                   btnStyle={styles.Button}
+                  onClick={signUpUser}
                 />
               </div>
 
@@ -172,7 +240,7 @@ export default function WebAuth() {
           <div className="row m-0">
             <div className="col-4">
               <PrimaryButton
-                label="Login with Google"
+                label="signIn with Google"
                 variant="outline"
                 colorScheme={BaseColors.light_grey}
                 size="sm"
@@ -185,7 +253,7 @@ export default function WebAuth() {
             </div>
             <div className="col-4">
               <PrimaryButton
-                label="Login with Facebook"
+                label="signIn with Facebook"
                 variant="outline"
                 colorScheme={BaseColors.light_grey}
                 size="sm"
@@ -198,7 +266,7 @@ export default function WebAuth() {
             </div>
             <div className="col-4">
               <PrimaryButton
-                label="Login with Linkedin"
+                label="signIn with Linkedin"
                 variant="outline"
                 colorScheme={BaseColors.light_grey}
                 size="sm"

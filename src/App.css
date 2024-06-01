@@ -127,9 +127,17 @@
   background-color: #362f33;
   color: #fff;
 }
-
-.select-selected {
-  background-color: DodgerBlue;
+.liveShow-select select {
+  width: 131px;
+  height: 34px;
+  background-color: #362f33;
+  color: #fff;
+}
+.liveShow-select select option:hover {
+  background-color: rgb(123, 81, 129, 0.3) !important;
+}
+.liveShow-select:hover::before {
+  background-color: rgb(123, 81, 129, 0.7) !important;
 }
 
 /*style the arrow inside the select element:*/
@@ -369,7 +377,7 @@
   font-family: "Montserrat", sans-serif;
 }
 
-/* .text-2 {
+.text-2 {
   font-size: 1.6rem;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
@@ -385,7 +393,13 @@
   font-size: 1.3rem;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
-} */
+}
+
+.text-5 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
 
 @keyframes move {
   0% {
@@ -459,4 +473,38 @@
 }
 .dashboardTabs:active {
   background: rgb(46, 46, 46, 0.5) !important;
+}
+
+.live-drawer-button {
+  /* background: #362f33 !important; */
+  background: transparent !important;
+  color: #fff !important;
+  text-align: start;
+}
+
+.live-drawer-button:hover {
+  background: rgb(123, 81, 129, 0.3) !important;
+  /* border: none !important; */
+}
+
+.live-drawer-button:focus {
+  background: rgb(123, 81, 129, 0.7) !important;
+  border: none !important;
+}
+
+.live-tabs-button {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.live-tabs-button:hover {
+  background: rgb(123, 81, 129, 0.3) !important;
+}
+
+.live-tabs-button:focus {
+  background: rgb(123, 81, 129, 0.7) !important;
+}
+
+.live-all-active {
+  background: rgb(123, 81, 129, 0.7);
 }
