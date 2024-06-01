@@ -6,11 +6,12 @@ import { AiOutlineAppstore } from "react-icons/ai";
 import { MdOutlineRssFeed } from "react-icons/md";
 import Users from "../users";
 import LiveStream from "../live-stream";
+import Dashboard from "./main-dashboard";
 
 const pagesArr = [
   {
     name: "Dashboard",
-    route: "",
+    route: "dashboard",
     icon: <AiOutlineAppstore />,
   },
   {
@@ -31,38 +32,41 @@ export default function SuperAdminDashboard() {
   console.log(userData);
 
   return (
-    <DashboardLayout
-      RouteContent={
-        <Routes>
-          <Route path="live-stream" element={<LiveStream />} />
-          <Route path="users" element={<Users />} />
-          {/* <Route path="" element={<Institute />} />
+    <>
+      <DashboardLayout
+        RouteContent={
+          <Routes>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="live-stream" element={<LiveStream />} />
+            <Route path="users" element={<Users />} />
+            {/* <Route path="" element={<Institute />} />
           <Route path="user-registration" element={<UserRegistration />} />
           <Route path="*" element={<NotFound />} /> */}
-          {/* <Route path="registraform/:id" element={<NotFound />} /> //*/}
-        </Routes>
-      }
-      userName={userData.userName}
-    >
-      {pagesArr.map((x, index) => (
-        <div
-          key={index}
-          // className="flex items-center justify-center my-2 p-[0.8px]
-          //  rounded bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30%
-          // to-emerald-500 to-90% hoverborder "
-          className="justify-content-center align-items-center "
-        >
+            {/* <Route path="registraform/:id" element={<NotFound />} /> //*/}
+          </Routes>
+        }
+        userName={userData.userName}
+      >
+        {pagesArr.map((x, index) => (
           <div
             key={index}
-            // className="text-white w-full h-[6vh] rounded bg-[#000000] flex items-center justify-center "
-            className="text-white w-full rounded d-flex justify-content-start align-items-center px-4 py-2 mb-2 fs-5 dashboardTabs"
-            style={{ background: `rgb(54, 52, 135, 0.8)` }}
-            onClick={() => navigate(x.route)}
+            // className="flex items-center justify-center my-2 p-[0.8px]
+            //  rounded bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30%
+            // to-emerald-500 to-90% hoverborder "
+            className="justify-content-center align-items-center "
           >
-            <span>{x.icon}</span> <span className="ps-2">{x.name}</span>
+            <div
+              key={index}
+              // className="text-white w-full h-[6vh] rounded bg-[#000000] flex items-center justify-center "
+              className="text-white w-full rounded d-flex justify-content-start align-items-center px-4 py-2 mb-2 fs-5 dashboardTabs"
+              style={{ background: `rgb(54, 52, 135, 0.8)` }}
+              onClick={() => navigate(x.route)}
+            >
+              <span>{x.icon}</span> <span className="ps-2">{x.name}</span>
+            </div>
           </div>
-        </div>
-      ))}
-    </DashboardLayout>
+        ))}
+      </DashboardLayout>
+    </>
   );
 }
