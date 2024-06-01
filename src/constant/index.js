@@ -7,6 +7,7 @@ const BaseColors = {
   medium_grey: "#3a567a",
   medium_light_grey: "#2E2E2E",
   light_grey: "#7a7993",
+  grey_bg: "#362F33",
   danger: "#a23522",
   textGrey: "#d4d0db",
   yellow: "#efc90e",
