@@ -6,11 +6,12 @@ import { AiOutlineAppstore } from "react-icons/ai";
 import { MdOutlineRssFeed } from "react-icons/md";
 import Activity from "../activity";
 import LiveStream from "../live-stream";
+import Dashboard from "./main-dashboard";
 
 const pagesArr = [
   {
     name: "Dashboard",
-    route: "",
+    route: "dashboard",
     icon: <AiOutlineAppstore />,
   },
   {
@@ -35,6 +36,7 @@ export default function AdminDashboard() {
       RouteContent={
         <Routes>
           {/* <Route path="" element={<AdminDashboard />} /> */}
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="activity" element={<Activity />} />
           <Route path="live-stream" element={<LiveStream />} />
 
