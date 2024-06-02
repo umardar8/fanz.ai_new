@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { MdEditNote, MdOutlineDelete } from "react-icons/md";
 import { React } from "react";
+import BaseColors from "../../constant";
 
 // import * as React from 'react';
 // import { styled } from '@mui/material/styles';
@@ -75,25 +76,41 @@ import { React } from "react";
 //   );
 // }
 
-export default function CustomTable() {
+export default function CustomTable(props) {
+  const { typeNum, datasourse, cols } = props;
+
   return (
     <>
-      <TableContainer>
+      <TableContainer
+        className="px-3 py-3 shadow-sm rounded-1"
+        style={{ background: BaseColors.white }}
+      >
         <Table variant="striped">
-          <TableCaption>List of Users</TableCaption>
+          {/* <TableCaption>List of Users</TableCaption> */}
           <Thead>
             <Tr>
-              <Th isNumeric>ID</Th>
+              {cols.map((x, i) => (
+                <Th>{x.heading}</Th>
+              ))}
+
+              {/* <Th isNumeric>ID</Th>
               <Th>Name</Th>
               <Th>Username</Th>
               <Th>Email</Th>
               <Th>City</Th>
               <Th>Country</Th>
-              <Th>Action</Th>
+              <Th>Action</Th> */}
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
+            {datasourse.map((row, i) => (
+              <Tr>
+                {cols.map((col, ind) => (
+                  <Td>{row[col.key]}</Td>
+                ))}
+              </Tr>
+            ))}
+            {/*<Tr>
               <Td isNumeric>1</Td>
               <Td>Tianna Douglas</Td>
               <Td>jschmeler</Td>
@@ -101,13 +118,11 @@ export default function CustomTable() {
               <Td>West Cotyfurt</Td>
               <Td>USA</Td>
               <Td className="d-flex">
-                {/* <PrimaryButton leftIcon={<MdEditNote style={{ fontSize: "1.5em" }} />} btnClassName="p-0 m-0" />
-                    <PrimaryButton leftIcon={<MdOutlineDelete style={{ fontSize: "1.5em" }} />} btnClassName="p-0 m-0" /> */}
                 <MdEditNote style={{ fontSize: "1.5em" }} />
                 <MdOutlineDelete style={{ fontSize: "1.5em" }} />
               </Td>
             </Tr>
-            <Tr>
+             <Tr>
               <Td isNumeric>2</Td>
               <Td>Rene Batz</Td>
               <Td>kim.hermann</Td>
@@ -214,7 +229,7 @@ export default function CustomTable() {
                 <MdEditNote style={{ fontSize: "1.5em" }} />
                 <MdOutlineDelete style={{ fontSize: "1.5em" }} />
               </Td>
-            </Tr>
+            </Tr> */}
           </Tbody>
           <Tfoot>
             <Tr></Tr>

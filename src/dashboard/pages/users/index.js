@@ -7,6 +7,7 @@ import InputField from "../../../components/input-field";
 import { Styles } from "../../../styles";
 import PrimaryModal from "../../../components/modal";
 import { IoPersonAddOutline, IoFunnelOutline } from "react-icons/io5";
+import { MdEditNote, MdOutlineDelete } from "react-icons/md";
 
 const inputStyle = {
   borderRadius: "2px",
@@ -30,90 +31,107 @@ export default function Users() {
 
   let data = [
     {
-      postId: 1,
+      userId: 1,
       id: 1,
-      Dessert: "Frozen yoghurt",
-      Calories: "159",
-      Fat: "6.0",
-      Carbs: "24",
-      Protein: "4.0",
+      Name: "Tianna Douglas",
+      Username: "jschmeler",
+      Email: "jessie.cremin@yahoo.com",
+      Edit: <MdEditNote style={{ fontSize: "1.5em" }} />,
+      Delete: <MdOutlineDelete style={{ fontSize: "1.5em" }} />,
     },
     {
-      postId: 1,
-      id: 2,
-      Dessert: "Ice cream sandwich",
-      Calories: "237",
-      Fat: "9.0",
-      Carbs: "37",
-      Protein: "4.3",
-    },
-    {
-      postId: 1,
-      id: 3,
-      Dessert: "Eclair",
-      Calories: "262",
-      Fat: "16.0",
-      Carbs: "24",
-      Protein: "6.0",
-    },
-    {
-      postId: 1,
-      id: 4,
-      Dessert: "Cupcake",
-      Calories: "305",
-      Fat: "3.7",
-      Carbs: "67",
-      Protein: "4.3",
-    },
-    {
-      postId: 1,
-      id: 5,
-      Dessert: "Gingerbread",
-      Calories: "356",
-      Fat: "16.0",
-      Carbs: "49",
-      Protein: "3.9",
+      userId: 1,
+      id: 1,
+      Name: "Tianna Douglas",
+      Username: "jschmeler",
+      Email: "jessie.cremin@yahoo.com",
+      Edit: <MdEditNote style={{ fontSize: "1.5em" }} />,
+      Delete: <MdOutlineDelete style={{ fontSize: "1.5em" }} />,
     },
   ];
   return (
     <>
-      <div className="border border-danger">
-        <div className="row p-0 m-0" style={{ background: "#ffffff" }}>
-          {/* start button header */}
-          <div className="col-12">
-            <div className="row mt-2">
-              <div className="col-sm-12">
-                <div className="d-flex justify-content-end mb-2">
+      <div className="">
+        <div className="row p-0 m-0">
+          {/* start header */}
+          <div className="col-12 mb-2 ">
+            <div className="row d-flex justify-content-between align-items-center my-2">
+              <div className="col-6 col-lg-4 d-flex flex-column justify-content-center">
+                <h3 className="text-dark text-family mt-2">Users Detail</h3>
+              </div>
+              <div className="col-6 col-lg-4  d-flex flex-column justify-content-center">
+                <div className="d-flex justify-content-end ">
                   <PrimaryButton
                     leftIcon={
                       <IoFunnelOutline
-                        style={{ fontSize: "1.5em", color: "gray" }}
+                        style={{
+                          fontSize: "1.5em",
+                          color: "rgb(148, 148, 148)",
+                        }}
                       />
                     }
                     btnStyle={{
                       background: "transparent",
                       marginRight: "10px",
                     }}
-                    btnClassName="border rounded-1"
+                    btnClassName="border-1 rounded-1"
                   />
                   <PrimaryButton
                     leftIcon={
                       <IoPersonAddOutline
-                        style={{ fontSize: "1.5em", color: "gray" }}
+                        style={{
+                          fontSize: "1.5em",
+                          color: "rgb(148, 148, 148)",
+                        }}
                       />
                     }
                     btnStyle={{ background: "transparent" }}
-                    btnClassName="border rounded-1"
+                    btnClassName="border-1 rounded-1"
                     onClick={showModal}
                   />
                 </div>
               </div>
             </div>
           </div>
-          {/* end button header */}
+          {/* end  header */}
 
           <div className="col-12">
-            <CustomTable />
+            <CustomTable
+              cols={[
+                {
+                  heading: "Id",
+                  key: "id",
+                },
+                {
+                  heading: "Name",
+                  key: "Name",
+                },
+                {
+                  heading: "Username",
+                  key: "Username",
+                },
+                {
+                  heading: "Email",
+                  key: "Email",
+                },
+                {
+                  heading: "Edit",
+                  key: "Edit",
+                },
+                {
+                  heading: "Delete",
+                  key: "Delete",
+                },
+              ]}
+              datasourse={data}
+            />
+            {/* <Th isNumeric>ID</Th>
+              <Th>Name</Th>
+              <Th>Username</Th>
+              <Th>Email</Th>
+              <Th>City</Th>
+              <Th>Country</Th>
+              <Th>Action</Th> */}
             {/* <CustomizedTable
             label="Testing data"
             cols={[

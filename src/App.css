@@ -508,3 +508,9 @@
 .live-all-active {
   background: rgb(123, 81, 129, 0.7);
 }
+
+/* border */
+
+.border-1 {
+  border: 1.2px solid rgb(205, 205, 206);
+}
