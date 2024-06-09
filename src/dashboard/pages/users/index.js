@@ -7,7 +7,8 @@ import InputField from "../../../components/input-field";
 import { Styles } from "../../../styles";
 import PrimaryModal from "../../../components/modal";
 import { IoPersonAddOutline, IoFunnelOutline } from "react-icons/io5";
-import { MdEditNote, MdOutlineDelete } from "react-icons/md";
+import { RiUserForbidLine, RiUserFollowLine } from "react-icons/ri";
+import { MdEditNote } from "react-icons/md";
 
 const inputStyle = {
   borderRadius: "2px",
@@ -35,18 +36,180 @@ export default function Users() {
       id: 1,
       Name: "Tianna Douglas",
       Username: "jschmeler",
+      Role: "User",
       Email: "jessie.cremin@yahoo.com",
-      Edit: <MdEditNote style={{ fontSize: "1.5em" }} />,
-      Delete: <MdOutlineDelete style={{ fontSize: "1.5em" }} />,
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
     },
     {
-      userId: 1,
-      id: 1,
-      Name: "Tianna Douglas",
-      Username: "jschmeler",
-      Email: "jessie.cremin@yahoo.com",
-      Edit: <MdEditNote style={{ fontSize: "1.5em" }} />,
-      Delete: <MdOutlineDelete style={{ fontSize: "1.5em" }} />,
+      userId: 2,
+      id: 2,
+      Name: "Rene Batz",
+      Username: "kim.hermann",
+      Role: "User",
+      Email: "epacocha@davis.com",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 3,
+      id: 3,
+      Name: "Vinnie Boehm V",
+      Username: "kamren76",
+      Role: "Creator",
+      Email: "rath.deja@hotmail.com",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 4,
+      id: 4,
+      Name: "Dane Yundt",
+      Username: "rigoberto.braun",
+      Role: "Creator",
+      Email: "rheathcote@hotmail.com",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 5,
+      id: 5,
+      Name: "Krystel Weber",
+      Username: "skoch",
+      Role: "Creator",
+      Email: "zulauf.pat@effertz.com",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 6,
+      id: 6,
+      Name: "Oren Mertz",
+      Username: "shaniya.hagenes",
+      Role: "User",
+      Email: "austin77@rath.com",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 7,
+      id: 7,
+      Name: "Manuela Mueller",
+      Username: "hsimonis",
+      Role: "User",
+      Email: "robin.herzog@kerluke.biz",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 8,
+      id: 8,
+      Name: "Lowell Rau",
+      Username: "wendy.stark",
+      Role: "User",
+      Email: "pagac.novella@becker.net",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 9,
+      id: 9,
+      Name: "Lue Cremin",
+      Username: "gutmann.brown",
+      Role: "Creator",
+      Email: "alphonso94@mraz.com",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserForbidLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+    },
+    {
+      userId: 10,
+      id: 10,
+      Name: "Ezekiel Hayes",
+      Username: "xmills",
+      Role: "Creator",
+      Email: "tklocko@wintheiser.net",
+      Edit:
+      <PrimaryButton 
+        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
+      Disable:
+      <PrimaryButton 
+        leftIcon={ <RiUserFollowLine style={{ fontSize: "1.5em" }} /> }
+        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+      />,
     },
   ];
   return (
@@ -111,6 +274,10 @@ export default function Users() {
                   key: "Username",
                 },
                 {
+                  heading: "Role",
+                  key: "Role",
+                },
+                {
                   heading: "Email",
                   key: "Email",
                 },
@@ -119,8 +286,8 @@ export default function Users() {
                   key: "Edit",
                 },
                 {
-                  heading: "Delete",
-                  key: "Delete",
+                  heading: "Disable",
+                  key: "Disable",
                 },
               ]}
               datasourse={data}
@@ -191,16 +358,16 @@ export default function Users() {
                 <Stack spacing={2} className="text-black">
                   <InputField
                     isBlack={true}
-                    label="First Name"
+                    label="Name"
                     type="text"
-                    placeholder="enter first name"
+                    placeholder="enter name"
                     inputStyle={inputStyle}
                   />
                   <InputField
                     isBlack={true}
-                    label="Last Name"
+                    label="Username"
                     type="text"
-                    placeholder="enter last name"
+                    placeholder="enter username"
                     inputStyle={inputStyle}
                   />
                   <InputField
@@ -232,7 +399,8 @@ export default function Users() {
                         borderRadius: "2px",
                         color: BaseColors.light_grey,
                         height: "5vh",
-                        width: "40%",
+                        width: "97%",
+                        marginBottom: "20px",
                       }}
                     >
                       <option value="0">select</option>
