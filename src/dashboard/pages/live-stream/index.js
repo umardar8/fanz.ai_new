@@ -439,19 +439,33 @@ export default function LiveStream() {
         }}
         Modalbody={
           <>
-            <div className="row container p-4 d-flex">
-              <h2 className="text-secondary justify-content-center d-flex">
-                More Information
-              </h2>
-              <div className="col-12 align-items-center text-black px-4">
-                  <p className="heading-3 mb-2">Uploaded by</p>
-                  <p className="heading-2 mb-1"><b>Name:</b> name_of_user</p>
+            <div className="row p-4 d-flex">
+              <div className="col-12 text-black px-4">
+                  <p className="text-family text-center fs-4 mb-2">
+                    <b>User Details</b>
+                  </p>
+                  <CustomTable
+                    variant='simple'
+                    noHead={true}
+                    noFooter={true}
+                    cols={[ { key: "col1", colClass: "h6 text-secondary"  }, { key: "col2" } ]}
+                    datasourse={
+                      [
+                        {col1: "Name", col2: "Krystel Weber"},
+                        {col1: "Username", col2: "skoch"},
+                        {col1: "Role", col2: "Creator"},
+                        {col1: "Email", col2: "zulauf.pat@effertz.com"},
+                        {col1: "Date", col2: "02/06/2024"},
+                        {col1: "Time", col2: "07:18 PM"},
+                      ]
+                    }
+                  />
+                  {/* <p className="heading-2 mb-1"><b>Name:</b> name_of_user</p>
                   <p className="heading-2 mb-1"><b>Username:</b> username_of_user</p>
-                  <p className="heading-2"><b>Email:</b> email_of_user@email.com</p>
-                  <p className="heading-3 mb-2">Streamed On</p>
+                  <p className="heading-2 mb-1"><b>Email:</b> email_of_user@email.com</p>
                   <p className="heading-2 mb-1"><b>Date:</b> dd_mm_yyyy</p>
                   <p className="heading-2 mb-1"><b>Time:</b> hh:mm</p>
-                  <p className="heading-2"><b>Duration:</b> 02 hour 25 min</p>
+                  <p className="heading-2"><b>Duration:</b> 02 hour 25 min</p> */}
               </div>
             </div>
           </>
