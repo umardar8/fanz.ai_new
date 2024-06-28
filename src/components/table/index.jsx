@@ -94,16 +94,16 @@ export default function CustomTable(props) {
             <Thead>
               <Tr>
                 {cols.map((x, i) => (
-                  <Th>{x.heading}</Th>
+                  <Th className="pb-3">{x.heading}</Th>
                 ))}
               </Tr>
             </Thead>
           )}
           <Tbody>
             {datasourse.map((row, i) => (
-              <Tr>
+              <Tr className="">
                 {cols.map((col, ind) => (
-                  <Td className={col.colClass}>{row[col.key]}</Td>
+                  <Td className={`${col.colClass}`} >{row[col.key]}</Td>
                 ))}
               </Tr>
             ))}

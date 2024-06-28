@@ -98,7 +98,7 @@ export default function Home() {
           >
             {!isShow ? (
               <>
-                <WeatherPanel />
+                {/* <WeatherPanel /> */}
                 <AdsCard />
               </>
             ) : (

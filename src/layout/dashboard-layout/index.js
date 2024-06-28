@@ -8,6 +8,7 @@ import BaseColors from "../../constant";
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import { MdLogout } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
+import "../../styles/css/dashboard.css";
 
 export default function DashboardLayout(props) {
   const navigate = useNavigate();

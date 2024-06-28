@@ -10,9 +10,11 @@ import { IoFunnelOutline } from "react-icons/io5";
 import { IoMdMore, IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { BiVideoPlus } from "react-icons/bi";
 import { MdEditNote, MdOutlineDisabledVisible } from "react-icons/md";
+import { SlEye } from "react-icons/sl";
 import { TiTickOutline } from "react-icons/ti";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { CiCircleCheck } from "react-icons/ci";
+import { color } from "framer-motion";
 
 // import StreamingForm from "../../../components/streaming-form";
 
@@ -51,22 +53,22 @@ export default function LiveStream() {
       Title: "Foreign Scholarships",
       Description: "Students' Awareness Live Session",
       Category: "Education",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <MdOutlineDisabledVisible style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+          label="Pending"
+          btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
     {
       streamId: 2,
@@ -74,22 +76,22 @@ export default function LiveStream() {
       Title: "Heat Stroke in MENA Region",
       Description: "Report on Global Warming",
       Category: "Climate",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <MdOutlineDisabledVisible style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+          label="Reject"
+          btnStyle={{ background: "rgba(250,187,195, 0.4)", color: '#B23E45',width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
     {
       streamId: 3,
@@ -97,22 +99,22 @@ export default function LiveStream() {
       Title: "Live Job Fair UAE",
       Description: "Live opportunities session",
       Category: "Career",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <MdOutlineDisabledVisible style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+        label="Aproved"
+        btnStyle={{ background: "rgba(202,240,204, 0.5)", color: '#497707', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
     {
       streamId: 4,
@@ -120,22 +122,22 @@ export default function LiveStream() {
       Title: "Analysis of Pandemics",
       Description: "Safeguard yourself during Pandemics",
       Category: "Health",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <MdOutlineDisabledVisible style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+        label="Pending"
+        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
     {
       streamId: 5,
@@ -143,22 +145,22 @@ export default function LiveStream() {
       Title: "Nanotechnology Advancements",
       Description: "The future of Technologies",
       Category: "Technology",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <MdOutlineDisabledVisible style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+        label="Aproved"
+        btnStyle={{ background: "rgba(202,240,204, 0.5)", color: '#497707', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
     {
       streamId: 6,
@@ -166,22 +168,22 @@ export default function LiveStream() {
       Title: "The Rise of Startup",
       Description: "How to start your business",
       Category: "Career",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <MdOutlineDisabledVisible style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+        label="Pending"
+        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
     {
       streamId: 7,
@@ -189,22 +191,22 @@ export default function LiveStream() {
       Title: "The future of Medication",
       Description: "Latest advancements in Medicine",
       Category: "Health",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <MdOutlineDisabledVisible style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+        label="Pending"
+        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
     {
       streamId: 8,
@@ -212,22 +214,22 @@ export default function LiveStream() {
       Title: "Political Issues of World",
       Description: "No Description",
       Category: "Career",
-      Edit: 
-      <PrimaryButton 
-        leftIcon={ <MdEditNote style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      Disable:
-      <PrimaryButton 
-        leftIcon={ <IoMdCheckmarkCircleOutline style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-      />,
-      More: 
-      <PrimaryButton 
-        leftIcon={ <IoMdMore style={{ fontSize: "1.5em" }} /> }
-        btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        onClick={showMoreModal}
-      />,
+      Status:
+        <PrimaryButton
+        label="Pending"
+        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
+        />,
+      Watch:
+        <PrimaryButton
+          leftIcon={<SlEye size={20} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+        />,
+      More:
+        <PrimaryButton
+          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
+          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
+          onClick={showMoreModal}
+        />,
     },
   ];
 
@@ -243,7 +245,7 @@ export default function LiveStream() {
               </div>
               <div className="col-6 col-lg-4  d-flex flex-column justify-content-center">
                 <div className="d-flex justify-content-end ">
-                <PrimaryButton
+                  <PrimaryButton
                     leftIcon={
                       <IoFunnelOutline
                         style={{
@@ -295,12 +297,12 @@ export default function LiveStream() {
                   key: "Category",
                 },
                 {
-                  heading: "Edit",
-                  key: "Edit",
+                  heading: "Status",
+                  key: "Status",
                 },
                 {
-                  heading: "Disable",
-                  key: "Disable",
+                  heading: "Watch",
+                  key: "Watch",
                 },
                 {
                   heading: "More",
@@ -308,6 +310,7 @@ export default function LiveStream() {
                 },
               ]}
               datasourse={data}
+              size='sm'
             />
           </div>
         </div>
@@ -350,15 +353,15 @@ export default function LiveStream() {
                     >
                       Description
                     </p>
-                  <Textarea 
-                    placeholder='enter description of stream' 
-                    style={{
-                      borderRadius: "2px",
-                      width: "97%",
-                      padding: "15px 20px",
-                      color: BaseColors.black,
-                      border: `1px solid ${BaseColors.light_grey},`,
-                    }}
+                    <Textarea
+                      placeholder='enter description of stream'
+                      style={{
+                        borderRadius: "2px",
+                        width: "97%",
+                        padding: "15px 20px",
+                        color: BaseColors.black,
+                        border: `1px solid ${BaseColors.light_grey},`,
+                      }}
                     />
                   </div>
                   <InputField
@@ -441,26 +444,34 @@ export default function LiveStream() {
           <>
             <div className="row p-4 d-flex">
               <div className="col-12 text-black px-4">
+              <div className="d-flex">
+                  <div className="text-center" style={{width:'95%'}}>
                   <p className="text-family text-center fs-4 mb-2">
                     <b>User Details</b>
                   </p>
-                  <CustomTable
-                    variant='simple'
-                    noHead={true}
-                    noFooter={true}
-                    cols={[ { key: "col1", colClass: "h6 text-secondary"  }, { key: "col2" } ]}
-                    datasourse={
-                      [
-                        {col1: "Name", col2: "Krystel Weber"},
-                        {col1: "Username", col2: "skoch"},
-                        {col1: "Role", col2: "Creator"},
-                        {col1: "Email", col2: "zulauf.pat@effertz.com"},
-                        {col1: "Date", col2: "02/06/2024"},
-                        {col1: "Time", col2: "07:18 PM"},
-                      ]
-                    }
-                  />
-                  {/* <p className="heading-2 mb-1"><b>Name:</b> name_of_user</p>
+                  </div>
+                  <div style={{width:'5%'}}>
+                    <MdEditNote size={20} />
+                  </div>
+                </div>
+                <CustomTable
+                  variant='simple'
+                  noHead={true}
+                  noFooter={true}
+                  cols={[{ key: "col1", colClass: "h6 text-secondary" }, { key: "col2" }]}
+
+                  datasourse={
+                    [
+                      { col1: "Name", col2: "Krystel Weber" },
+                      { col1: "Username", col2: "skoch" },
+                      { col1: "Role", col2: "Creator" },
+                      { col1: "Email", col2: "zulauf.pat@effertz.com" },
+                      { col1: "Date", col2: "02/06/2024" },
+                      { col1: "Time", col2: "07:18 PM" },
+                    ]
+                  }
+                />
+                {/* <p className="heading-2 mb-1"><b>Name:</b> name_of_user</p>
                   <p className="heading-2 mb-1"><b>Username:</b> username_of_user</p>
                   <p className="heading-2 mb-1"><b>Email:</b> email_of_user@email.com</p>
                   <p className="heading-2 mb-1"><b>Date:</b> dd_mm_yyyy</p>
