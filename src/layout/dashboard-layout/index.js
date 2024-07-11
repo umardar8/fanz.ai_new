@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, PureComponent } from "react";
 // import { profile } from "../../../assets";
 // import Button from "../../button/primary-button";
 // import { fbSignout } from "../../../config/firebase/firebase-methods";

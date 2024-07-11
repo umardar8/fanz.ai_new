@@ -7,14 +7,10 @@ import InputField from "../../../components/input-field";
 import { Styles } from "../../../styles";
 import PrimaryModal from "../../../components/modal";
 import { IoFunnelOutline } from "react-icons/io5";
-import { IoMdMore, IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { IoMdMore } from "react-icons/io";
 import { BiVideoPlus } from "react-icons/bi";
-import { MdEditNote, MdOutlineDisabledVisible } from "react-icons/md";
+import { MdEditNote } from "react-icons/md";
 import { SlEye } from "react-icons/sl";
-import { TiTickOutline } from "react-icons/ti";
-import { FaRegCheckCircle } from "react-icons/fa";
-import { CiCircleCheck } from "react-icons/ci";
-import { color } from "framer-motion";
 
 // import StreamingForm from "../../../components/streaming-form";
 

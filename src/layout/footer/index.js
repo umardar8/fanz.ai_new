@@ -16,9 +16,9 @@ export default function WebFooter() {
               <div className="custom-select">
                 <select className="p-2 rounded-1">
                   <option value="0">English</option>
-                  <option value="1">Audi</option>
-                  <option value="2">BMW</option>
-                  <option value="3">Citroen</option>
+                  <option value="1">Arabic</option>
+                  <option value="2">Hindi</option>
+                  <option value="3">Urdu</option>
                 </select>
               </div>
             </div>
