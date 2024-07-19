@@ -9,6 +9,8 @@ import LiveShow from "../../pages/live-show";
 import Auth from "../../pages/auth";
 import AdminDashboard from "../../dashboard/pages/admin-dashboard";
 import SuperAdminDashboard from "../../dashboard/pages/super-admin-dashboard";
+import NotFoundAdmin from "../../dashboard/pages/not-found-admin";
+import NotFoundUser from "../../dashboard/pages/not-found-user";
 // import AdminDashboard from "../../dashboard/pages/admin-dashboard";
 
 export default function WebRoutes() {
@@ -26,6 +28,8 @@ export default function WebRoutes() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/admin-dashboard/*" element={<AdminDashboard />} />
+          <Route path="/not-found-admin" element={<NotFoundAdmin />} />
+          <Route path="/not-found-user" element={<NotFoundUser />} />
           <Route
             path="/super-admin-dashboard"
             element={<SuperAdminDashboard />}
