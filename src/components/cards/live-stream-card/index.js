@@ -10,7 +10,7 @@ export default function LiveStreamCard(props) {
   return (
     <div className="col-sm-6 col-md-4 pb-5">
       <img
-        src={props.cardimg}
+        src={props.thumb}
         alt=""
         style={{ height: "25vh" }}
         className="rounded shadow-1 mb-2 w-100 "

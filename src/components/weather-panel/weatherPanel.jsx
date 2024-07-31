@@ -11,18 +11,16 @@ const WeatherPanel = () => {
     const [longitude, setLongitude] = useState(0);
 
     // get current location of visitor.
-    navigator.geolocation.getCurrentPosition(
-        success => {
-            setLatitude(success.coords.latitude);
-            setLongitude(success.coords.longitude);
-        }, 
-        err => {
-            console.log("Unable to retrieve your location");
-        },
-        {
-            enableHighAccuracy: true,
-        }
-    )
+    navigator.geolocation.getCurrentPosition(success, err)
+
+    function success(position) {
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+    }
+
+    function err() {
+        console.log("Unable to retrieve your location");
+    }
 
     // Method and Variables for API call to get weather.
     const fetcher = (...args) => fetch(...args).then((res) => res.json());

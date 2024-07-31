@@ -22,6 +22,10 @@ export default function InputField(props) {
     inputWidth,
     label,
     isBlack,
+    maxLength,
+    inputHeight,
+    padding,
+    background
   } = props;
 
   return (
@@ -48,9 +52,9 @@ export default function InputField(props) {
                     border: `1px solid ${BaseColors.medium_grey}`,
                     borderRadius: 10,
                     width: inputWidth ? inputWidth : "250px",
-                    height: "5vh",
-                    padding: "15px 20px",
-                    background: BaseColors.medium_light_grey,
+                    height: inputHeight ? inputHeight : "5vh",
+                    padding: padding ? padding : "15px 20px",
+                    background: background ? background : BaseColors.medium_light_grey,
                     color: BaseColors.white,
                   }
             }
@@ -59,6 +63,7 @@ export default function InputField(props) {
             size={size ? size : "md"}
             value={value}
             onChange={onChange}
+            maxLength={maxLength}
           />
           {rightIcon ? (
             <InputRightElement pointerEvents="none">
