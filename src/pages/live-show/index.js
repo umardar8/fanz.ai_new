@@ -17,18 +17,141 @@ import Slider from "react-slick";
 
 const cardData = [
   [
-    { cardimg: HeroImage, head: "Education", year: "2024" },
-    { cardimg: HeroImage, head: "Health", year: "2024" },
-    { cardimg: HeroImage, head: "Career", year: "2024" },
-    { cardimg: HeroImage, head: "Tech", year: "2024" },
-    { cardimg: HeroImage, head: "Health", year: "2024" },
-    { cardimg: HeroImage, head: "Education", year: "2024" },
-    { cardimg: HeroImage, head: "Climate", year: "2024" },
-    { cardimg: HeroImage, head: "Tech", year: "2024" },
-    { cardimg: HeroImage, head: "Career", year: "2024" },
-    { cardimg: HeroImage, head: "Health", year: "2024" },
-    { cardimg: HeroImage, head: "Climate", year: "2024" },
-    { cardimg: HeroImage, head: "Education", year: "2024" },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
   ],
 ];
 
@@ -205,18 +328,27 @@ export default function LiveShow() {
             Carousel: {
               infinite: false,
             },
+            Thumbs: {
+              type: "classic",
+            },
+            classes: {
+              container: "f-thumbs f-classic-thumbs",
+              viewport: "f-classic-thumbs__viewport",
+              track: "f-classic-thumbs__track",
+              slide: "f-classic-thumbs__slide",
+            },
           }}
         >
           <div className="row m-0 p-0">
             {cardData[active]?.map((data, index) => (
               <a
-                href={data.cardimg}
-                className="col-sm-12 col-sm-6 col-md-4 pb-5"
+                href={data.source}
+                className="col-sm-12 col-sm-6 col-md-4 pb-5 "
                 key={index}
                 data-fancybox="gallery"
               >
                 <img
-                  src={data.cardimg}
+                  src={data.thumb}
                   alt=""
                   style={{ height: "25vh" }}
                   className="rounded shadow-1 mb-2 w-100 "

@@ -8,7 +8,7 @@ const Tcards = (props) => {
   return (
     <div className="px-3">
       <img
-        src={props.cardimg}
+        src={props.thumb}
         alt=""
         style={{ height: "37vh" }}
         className="rounded shadow-1 mb-2 "

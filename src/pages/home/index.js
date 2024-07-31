@@ -17,18 +17,97 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 import { IoPricetags } from "react-icons/io5";
 
 const cardData = [
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Techs Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Techs Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Techs Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
-  { cardimg: HeroImage, head: "Tech Talk", year: "2013", rating: "7.7" },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+    head: "Techs Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+    head: "Techs Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",
+    head: "Techs Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
+  {
+    thumb:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+    head: "Tech Talk",
+    year: "2013",
+    rating: "7.7",
+  },
 ];
 
 export default function Home() {
@@ -98,7 +177,7 @@ export default function Home() {
           >
             {!isShow ? (
               <>
-                <WeatherPanel />
+                {/* <WeatherPanel /> */}
                 <AdsCard />
               </>
             ) : (

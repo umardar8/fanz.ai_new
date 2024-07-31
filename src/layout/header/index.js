@@ -17,17 +17,6 @@ export default function WebHeader() {
   const navigate = useNavigate();
   const [colorHover, setcolorHover] = useState(false);
   const [colorChange, setColorchange] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  // const handleOk = () => {
-  //   setIsModalOpen(false);
-  // };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 500) {
@@ -176,13 +165,7 @@ export default function WebHeader() {
                 // to="/profile"
                 style={Styles.headerItem}
               >
-                <Avatar
-                  src="https://bit.ly/dan-abramov"
-                  size="md"
-                  onClick={showModal}
-                >
-                  <AvatarBadge boxSize="1em" bg="green.500" />
-                </Avatar>
+                <WebAuth />
               </Link>
             </Nav>
           </Container>
@@ -293,16 +276,6 @@ export default function WebHeader() {
           </div>
         ) : null}
       </div>
-      <PrimaryModal
-        open={isModalOpen}
-        onCancel={handleCancel}
-        styles={{ minHeight: "95vh" }}
-        Modalbody={
-          <>
-            <WebAuth />
-          </>
-        }
-      />
     </>
   );
 }

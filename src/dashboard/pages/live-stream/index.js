@@ -1,483 +1,392 @@
-import React, { useState } from "react";
-import { Stack, Textarea } from "@chakra-ui/react";
-import CustomTable from "../../../components/table";
-import BaseColors from "../../../constant";
+import React, { useEffect, useState } from "react";
+import { placeholderBanner } from "../../../assets";
+import Layout from "../../../layout/web-layout";
 import PrimaryButton from "../../../components/button";
-import InputField from "../../../components/input-field";
-import { Styles } from "../../../styles";
-import PrimaryModal from "../../../components/modal";
-import { IoFunnelOutline } from "react-icons/io5";
-import { IoMdMore } from "react-icons/io";
-import { BiVideoPlus } from "react-icons/bi";
-import { MdEditNote } from "react-icons/md";
-import { SlEye } from "react-icons/sl";
+// icons
+import { GrAppsRounded } from "react-icons/gr";
+import { IoAnalytics } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa";
+import { GiHealthNormal } from "react-icons/gi";
+import { FaUserGraduate, FaCloudSun, FaWifi } from "react-icons/fa";
+import { MdOutlineWork } from "react-icons/md";
+import { GrTechnology } from "react-icons/gr";
+import BaseColors from "../../../constant";
+import Fancybox from "../../../components/fancy-box";
+import Slider from "react-slick";
 
-// import StreamingForm from "../../../components/streaming-form";
+const cardData = [
+  [
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+      head: "Tech Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+    {
+      source:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      thumb:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+      head: "Techs Talk",
+      year: "2013",
+      rating: "7.7",
+    },
+  ],
+];
 
-const inputStyle = {
-  borderRadius: "2px",
-  height: "5vh",
-  width: "100%",
-  padding: "15px 20px",
-  color: BaseColors.black,
-  border: `1px solid ${BaseColors.light_grey},`,
-};
-
-export default function LiveStream() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isMoreModalOpen, setIsMoreModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
+export default function LiveShow() {
+  const [active, setActive] = useState(0);
+  const [activeTabs, setActiveTabs] = useState(0);
+  const handleTabClick = (index) => {
+    setActiveTabs(index);
   };
-  const showMoreModal = () => {
-    setIsMoreModalOpen(true);
+
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth > 767) {
+      setIsDesktop(true);
+      setIsTablet(false);
+    } else if (window.innerWidth <= 767) {
+      setIsDesktop(false);
+      setIsTablet(true);
+    } else {
+      setIsDesktop(false);
+      setIsTablet(false);
+    }
   };
 
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-  const handleMoreCancel = () => {
-    setIsMoreModalOpen(false);
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // tabs
+  const settings = {
+    dots: false,
+    arrows: false,
+    className: "center p-3",
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 4,
+    swipeToSlide: true,
   };
 
-  let data = [
+  // Drawer and Tabs
+  const Tabs = [
     {
-
-      streamId: 1,
-      id: 1,
-      Title: "Foreign Scholarships",
-      Description: "Students' Awareness Live Session",
-      Category: "Education",
-      Status:
-        <PrimaryButton
-          label="Pending"
-          btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
+      label: "All",
+      icon: <GrAppsRounded size={20} />,
     },
     {
-      streamId: 2,
-      id: 2,
-      Title: "Heat Stroke in MENA Region",
-      Description: "Report on Global Warming",
-      Category: "Climate",
-      Status:
-        <PrimaryButton
-          label="Reject"
-          btnStyle={{ background: "rgba(250,187,195, 0.4)", color: '#B23E45',width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
+      label: "Health",
+      icon: <FaPlus size={20} />,
     },
     {
-      streamId: 3,
-      id: 3,
-      Title: "Live Job Fair UAE",
-      Description: "Live opportunities session",
-      Category: "Career",
-      Status:
-        <PrimaryButton
-        label="Aproved"
-        btnStyle={{ background: "rgba(202,240,204, 0.5)", color: '#497707', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
+      label: "Education",
+      icon: <FaUserGraduate size={20} />,
     },
     {
-      streamId: 4,
-      id: 4,
-      Title: "Analysis of Pandemics",
-      Description: "Safeguard yourself during Pandemics",
-      Category: "Health",
-      Status:
-        <PrimaryButton
-        label="Pending"
-        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
+      label: "Technology",
+      icon: <IoAnalytics size={20} />,
     },
     {
-      streamId: 5,
-      id: 5,
-      Title: "Nanotechnology Advancements",
-      Description: "The future of Technologies",
-      Category: "Technology",
-      Status:
-        <PrimaryButton
-        label="Aproved"
-        btnStyle={{ background: "rgba(202,240,204, 0.5)", color: '#497707', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
+      label: "Climate",
+      icon: <FaCloudSun size={20} />,
     },
     {
-      streamId: 6,
-      id: 6,
-      Title: "The Rise of Startup",
-      Description: "How to start your business",
-      Category: "Career",
-      Status:
-        <PrimaryButton
-        label="Pending"
-        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
-    },
-    {
-      streamId: 7,
-      id: 7,
-      Title: "The future of Medication",
-      Description: "Latest advancements in Medicine",
-      Category: "Health",
-      Status:
-        <PrimaryButton
-        label="Pending"
-        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
-    },
-    {
-      streamId: 8,
-      id: 8,
-      Title: "Political Issues of World",
-      Description: "No Description",
-      Category: "Career",
-      Status:
-        <PrimaryButton
-        label="Pending"
-        btnStyle={{ background: "rgba(36,120,192, 0.3)", color: '#015b9b', width:'110px', margin: 0, borderRadius: '25px',fontSize:'14px', height:'33px' }}
-        />,
-      Watch:
-        <PrimaryButton
-          leftIcon={<SlEye size={20} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-        />,
-      More:
-        <PrimaryButton
-          leftIcon={<IoMdMore style={{ fontSize: "1.5em" }} />}
-          btnStyle={{ background: "transparent", padding: 0, margin: 0 }}
-          onClick={showMoreModal}
-        />,
+      label: "Career",
+      icon: <MdOutlineWork size={20} />,
     },
   ];
 
-  return (
-    <>
-      <div className="">
-        <div className="row p-0 m-0">
-          {/* start header */}
-          <div className="col-12 mb-2 ">
-            <div className="row d-flex justify-content-between align-items-center my-2">
-              <div className="col-6 col-lg-4 d-flex flex-column justify-content-center">
-                <h3 className="text-dark text-family mt-2">Streams Detail</h3>
-              </div>
-              <div className="col-6 col-lg-4  d-flex flex-column justify-content-center">
-                <div className="d-flex justify-content-end ">
-                  <PrimaryButton
-                    leftIcon={
-                      <IoFunnelOutline
-                        style={{
-                          fontSize: "1.5em",
-                          color: "rgb(148, 148, 148)",
-                        }}
-                      />
-                    }
-                    btnStyle={{ background: "transparent", marginRight: "10px" }}
-                    btnClassName="border-1 rounded-1"
-                    onClick={showModal}
-                  />
-                  <PrimaryButton
-                    leftIcon={
-                      <BiVideoPlus
-                        style={{
-                          fontSize: "1.5em",
-                          color: "rgb(148, 148, 148)",
-                        }}
-                      />
-                    }
-                    btnStyle={{ background: "transparent" }}
-                    btnClassName="border-1 rounded-1"
-                    onClick={showModal}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* end  header */}
-
-          <div className="col-12">
-            <CustomTable
-              cols={[
-                {
-                  heading: "Id",
-                  key: "id",
-                },
-                {
-                  heading: "Title",
-                  key: "Title",
-                },
-                {
-                  heading: "Description",
-                  key: "Description",
-                },
-                {
-                  heading: "Category",
-                  key: "Category",
-                },
-                {
-                  heading: "Status",
-                  key: "Status",
-                },
-                {
-                  heading: "Watch",
-                  key: "Watch",
-                },
-                {
-                  heading: "More",
-                  key: "More",
-                },
-              ]}
-              datasourse={data}
-              size='sm'
+  const Sidebar = () => {
+    return isDesktop ? (
+      <div className="col-md-2 my-5 px-3 list-group">
+        <h2 className="text-white mx-4 mb-4 align-self-start text-family">
+          Categories
+        </h2>
+        {Tabs.map((x, index) => (
+          <div key={index}>
+            <PrimaryButton
+              size="lg"
+              variant="solid"
+              label={x.label}
+              btnClassName={`mb-4 ${
+                activeTabs === index ? "live-all-active" : "live-drawer-button"
+              } rounded text-start w-100 flex justify-content-start gap-3 text-family fs-5`}
+              onClick={() => handleTabClick(index)}
+              leftIcon={x.icon}
             />
           </div>
-        </div>
+        ))}
       </div>
+    ) : null;
+  };
 
-      {/* model foam */}
-      <PrimaryModal
-        open={isModalOpen}
-        onCancel={handleCancel}
-        styles={{
-          display: "flex",
-          width: "40vw",
-          justifyContent: "center",
-          alignItems: "center",
-          top: "50%",
-          left: "50%",
-          right: "auto",
-          bottom: "auto",
-          transform: "translate(-50%, -50%)",
-        }}
-        Modalbody={
-          <>
-            <div className="row container p-4 d-flex">
-              <h2 className="text-secondary justify-content-center d-flex">
-                Stream Form
-              </h2>
-              <div className="col-12 align-items-center text-black px-4">
-                <Stack spacing={2} className="text-black">
-                  <InputField
-                    isBlack={true}
-                    label="Title"
-                    type="text"
-                    placeholder="enter stream title"
-                    inputStyle={inputStyle}
-                  />
-                  <div style={{ marginLeft: "10px" }}>
-                    <p
-                      className="my-1 text-secondary"
-                      style={Styles.headerItem3}
-                    >
-                      Description
-                    </p>
-                    <Textarea
-                      placeholder='enter description of stream'
-                      style={{
-                        borderRadius: "2px",
-                        width: "97%",
-                        padding: "15px 20px",
-                        color: BaseColors.black,
-                        border: `1px solid ${BaseColors.light_grey},`,
-                      }}
-                    />
-                  </div>
-                  <InputField
-                    isBlack={true}
-                    label="RTMP URL"
-                    placeholder="enter link to the stream"
-                    inputStyle={inputStyle}
-                  />
-                  <InputField
-                    isBlack={true}
-                    label="RTMP Key"
-                    placeholder="enter link to the stream"
-                    inputStyle={inputStyle}
-                  />
-                  <div style={{ marginLeft: "10px" }}>
-                    <p
-                      className="my-1 text-secondary"
-                      style={Styles.headerItem3}
-                    >
-                      Category{" "}
-                    </p>
-                    <select
-                      className="px-2"
-                      style={{
-                        border: `1px solid ${BaseColors.light_grey}`,
-                        borderRadius: "2px",
-                        color: BaseColors.light_grey,
-                        height: "5vh",
-                        width: "97%",
-                        marginBottom: "20px"
-                      }}
-                    >
-                      <option value="0">select</option>
-                      <option value="1">Health</option>
-                      <option value="2">Education</option>
-                      <option value="3">technology</option>
-                      <option value="4">Climate</option>
-                      <option value="5">Career</option>
-                    </select>
-                  </div>
-                </Stack>
-                <div className="col d-flex justify-content-end mt-2">
-                  <PrimaryButton
-                    label="Add"
-                    btnClassName="me-2"
-                    btnStyle={{ borderRadius: "2px", marginEnd: "10px" }}
-                    colorScheme="purple"
-                  />
-                  <PrimaryButton
-                    label="Cancel"
-                    variant="outline"
-                    btnStyle={{
-                      borderRadius: "2px",
-                      background: "transparent",
-                    }}
-                  />
-                </div>
+  const MainContent = () => {
+    return (
+      <div className="col-md-10 mt-5 mt-md-0 pt-5 pt-md-0">
+        <div
+          className="row m-0 p-0 d-flex justify-content-center"
+          style={{
+            height: "50vh",
+            background: `url(${placeholderBanner})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            overflow: "hidden",
+            borderRadius: "5px",
+          }}
+        >
+          <div className="col-10 d-flex flex-column justify-content-center ms-2 text-center">
+            <div className="pb-3 text-white">
+              <PrimaryButton
+                btnClassName="col-xs-4 mb-2"
+                label="Live"
+                size="sm"
+                btnStyle={{
+                  background: "#FE4703",
+                  color: "white",
+                }}
+                leftIcon={<FaWifi />}
+              />
+              <p className={isDesktop ? "heading-2" : "heading-3"}>
+                League of Legends © • &#9872; France
+              </p>
+              <p className="heading-1">Watch live how the top teams</p>
+              <p className="heading-1">play FaZe Clan VS Mousesports</p>
+              <PrimaryButton label="WATCH" padding="20px" />
+            </div>
+          </div>
+        </div>
+        {isDesktop ? (
+          <div className="row p-0 mx-0 my-4 d-flex justify-content-between align-items-center">
+            <div className="col">
+              <h3 className="text-white text-family ">Live Shows</h3>
+            </div>
+            <div className="col d-flex flex-column align-items-end">
+              <div className="liveShow-select">
+                <select className="p-2 rounded-1">
+                  <option value="0">Popular</option>
+                  <option value="1">Latest</option>
+                  <option value="2">Older</option>
+                </select>
               </div>
             </div>
-          </>
-        }
-      />
-
-      {/* more info modal */}
-      <PrimaryModal
-        open={isMoreModalOpen}
-        onCancel={handleMoreCancel}
-        styles={{
-          display: "flex",
-          width: "40vw",
-          justifyContent: "center",
-          alignItems: "center",
-          top: "50%",
-          left: "50%",
-          right: "auto",
-          bottom: "auto",
-          transform: "translate(-50%, -50%)",
-        }}
-        Modalbody={
-          <>
-            <div className="row p-4 d-flex">
-              <div className="col-12 text-black px-4">
-              <div className="d-flex">
-                  <div className="text-center" style={{width:'95%'}}>
-                  <p className="text-family text-center fs-4 mb-2">
-                    <b>User Details</b>
-                  </p>
-                  </div>
-                  <div style={{width:'5%'}}>
-                    <MdEditNote size={20} />
-                  </div>
+          </div>
+        ) : (
+          <div className="slider-container">
+            <Slider {...settings}>
+              {Tabs.map((x, index) => (
+                <div key={index} className="pe-2">
+                  <PrimaryButton
+                    size="lg"
+                    variant="solid"
+                    label={x.label}
+                    btnClassName={`mb-3 ${
+                      activeTabs === index
+                        ? "live-all-active"
+                        : "live-tabs-button"
+                    } rounded w-100 text-family`}
+                    onClick={() => handleTabClick(index)}
+                    // leftIcon={x.icon}
+                  />
                 </div>
-                <CustomTable
-                  variant='simple'
-                  noHead={true}
-                  noFooter={true}
-                  cols={[{ key: "col1", colClass: "h6 text-secondary" }, { key: "col2" }]}
+              ))}
+            </Slider>
+          </div>
+        )}
 
-                  datasourse={
-                    [
-                      { col1: "Name", col2: "Krystel Weber" },
-                      { col1: "Username", col2: "skoch" },
-                      { col1: "Role", col2: "Creator" },
-                      { col1: "Email", col2: "zulauf.pat@effertz.com" },
-                      { col1: "Date", col2: "02/06/2024" },
-                      { col1: "Time", col2: "07:18 PM" },
-                    ]
-                  }
+        <Fancybox
+          options={{
+            Carousel: {
+              infinite: false,
+            },
+            Thumbs: {
+              type: "classic",
+            },
+            classes: {
+              container: "f-thumbs f-classic-thumbs",
+              viewport: "f-classic-thumbs__viewport",
+              track: "f-classic-thumbs__track",
+              slide: "f-classic-thumbs__slide",
+            },
+          }}
+        >
+          <div className="row m-0 p-0">
+            {cardData[active]?.map((data, index) => (
+              <a
+                href={data.source}
+                className="col-sm-12 col-sm-6 col-md-4 pb-5 "
+                key={index}
+                data-fancybox="gallery"
+              >
+                <img
+                  src={data.thumb}
+                  alt=""
+                  style={{ height: "25vh" }}
+                  className="rounded shadow-1 mb-2 w-100 "
                 />
-                {/* <p className="heading-2 mb-1"><b>Name:</b> name_of_user</p>
-                  <p className="heading-2 mb-1"><b>Username:</b> username_of_user</p>
-                  <p className="heading-2 mb-1"><b>Email:</b> email_of_user@email.com</p>
-                  <p className="heading-2 mb-1"><b>Date:</b> dd_mm_yyyy</p>
-                  <p className="heading-2 mb-1"><b>Time:</b> hh:mm</p>
-                  <p className="heading-2"><b>Duration:</b> 02 hour 25 min</p> */}
-              </div>
-            </div>
-          </>
-        }
-      />
-    </>
-  )
+                <div className="d-flex justify-content-between pb-3">
+                  <div
+                    className="text-family fw-normal text-white pe-2 col-xs-8"
+                    style={{ fontSize: "calc(0.8em + 1vw)" }}
+                  >
+                    {data.head}
+                  </div>
+                  <PrimaryButton
+                    btnClassName="col-xs-4"
+                    label="Live"
+                    size="sm"
+                    btnStyle={{
+                      background: "#FE4703",
+                      color: "white",
+                    }}
+                    leftIcon={<FaWifi />}
+                  />
+                </div>
+                <div style={{ color: BaseColors.textGrey, fontSize: "0.9rem" }}>
+                  {data.year}
+                </div>
+              </a>
+            ))}
+          </div>
+        </Fancybox>
+      </div>
+    );
+  };
+
+  return (
+    <Layout>
+      <div className="row position-relative d-flex  mt-5 pt-5 mx-0 px-0">
+        <Sidebar />
+        <MainContent />
+      </div>
+    </Layout>
+  );
 }

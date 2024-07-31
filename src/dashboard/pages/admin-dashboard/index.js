@@ -11,7 +11,7 @@ import Dashboard from "./main-dashboard";
 const pagesArr = [
   {
     name: "Dashboard",
-    route: "dashboard",
+    route: "",
     icon: <AiOutlineAppstore />,
   },
   {
@@ -36,7 +36,7 @@ export default function AdminDashboard() {
       RouteContent={
         <Routes>
           {/* <Route path="" element={<AdminDashboard />} /> */}
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="" element={<Dashboard />} />
           <Route path="activity" element={<Activity />} />
           <Route path="live-stream" element={<LiveStream />} />
 
