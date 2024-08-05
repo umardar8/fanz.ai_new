@@ -13,6 +13,7 @@ import { FaStar } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import PrimaryModal from "../../components/modal";
+import styles from "./style.module.css"
 
 export default function HomeHeroBanner() {
   const [isSliderHovered, setIsSliderHovered] = useState(false);
@@ -28,31 +29,22 @@ export default function HomeHeroBanner() {
   return (
     <>
       <div
-        className="d-flex row mx-0 px-0 position-relative"
-        style={{
-          backgroundImage: `url(${HeroImage})`,
-          height: "99vh",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          marginBottom: "5%",
-        }}
+        className={`d-flex row mx-0 px-0 position-relative ${styles.bannerMain}`}
         onMouseEnter={() => setIsSliderHovered(true)}
         onMouseLeave={() => setIsSliderHovered(false)}
       >
         <div
-          className="row m-0 px-0 d-flex justify-content-between position-absolute align-items-end h-100"
+          className={`row m-0 px-0 d-flex justify-content-between align-items-end position-relative ${styles.bannerRow}`}
           style={{
-            // minHeight: 100%,
-            background: `linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)`,
+            background: `linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%) `,
             paddingBottom: "5%",
           }}
         >
           <div
-            className="col-11 col-lg-6 col-xl-7 d-flex flex-column justify-content-center align-items-center py-5"
-            // style={{ zIndex: "4" }}
+            className="col-11 col-lg-9 col-xl-8 d-flex flex-column justify-content-center align-self-center ps-md-5"
+          // style={{ zIndex: "4" }}
           >
-            <div style={{ maxWidth: "80%", paddingTop: "15%" }}>
+            <div style={{ maxWidth: "80%", paddingTop: "12%" }}>
               <PrimaryButton
                 label="Live"
                 btnStyle={{
@@ -62,7 +54,7 @@ export default function HomeHeroBanner() {
                 leftIcon={<FaWifi />}
               />
               <p className="heading-1 text-white">
-                Guddu in spotlight after Sunday's power breakdown
+                Guddu in spotlight after Sunday's<br className="d-none d-lg-block"/> power breakdown
               </p>
               <p className="text-family text-white fs-5 fw-normal">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -134,7 +126,57 @@ export default function HomeHeroBanner() {
               </div>
             </div>
           </div>
+
           <div
+            className="d-none d-lg-flex justify-content-end align-items-end position-absolute m-0 p-0"
+            style={
+              {
+                right: '10%',
+                // left: '65%',
+              }
+            }
+          >
+            <div
+              className="justify-content-center text-center"
+              style={{
+                background: "rgb(92, 92, 92, 0.7)",
+                height: "45%",
+                borderTopLeftRadius: 25,
+                borderTopRightRadius: 25,
+                padding: 20,
+                width: "25%",
+              }}
+            >
+              <div className="text-family fs-4 fw-normal text-white py-3">
+                TOP STORIES OF THE DAY
+              </div>
+              <TopStoryCard />
+              <TopStoryCard />
+              <TopStoryCard />
+            </div>
+          </div>
+         
+
+          <div
+            className="py-5 row m-0 px-0 position-absolute"
+            style={{
+              background: "linear-gradient(to top, #150b27 14%, #4f349d 91%)",
+              height: "40vh",
+              width: isSliderHovered ? "55px" : "24px",
+              borderTopLeftRadius: 25,
+              borderBottomLeftRadius: 25,
+              transition: "width 0.3s ease",
+              right: 0,
+              left: 'auto',
+              top: '30%'
+            }}
+          >
+            <RiGroupLine color={BaseColors.textGrey} size={25} />
+            <GoListUnordered color={BaseColors.textGrey} size={25} />
+            <BsDownload color={BaseColors.textGrey} size={25} />
+            <FiSettings color={BaseColors.textGrey} size={25} />
+          </div>
+          {/* <div
             className="col-lg-6 col-xl-5 
           d-none d-lg-block"
           >
@@ -149,8 +191,8 @@ export default function HomeHeroBanner() {
               <div
                 className="justify-content-center text-center"
                 style={{
-                  background: `rgb(92, 92, 92, 0.7)`,
-                  height: "52vh",
+                  background: rgb(92, 92, 92, 0.7),
+                  height: "45%",
                   borderTopLeftRadius: 25,
                   borderTopRightRadius: 25,
                   padding: 20,
@@ -165,9 +207,9 @@ export default function HomeHeroBanner() {
                 <TopStoryCard />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div
+        {/* <div
           className=" d-flex flex-column align-items-end justify-content-center pe-0  pt-5 pt-md-1"
           style={
             {
@@ -178,7 +220,7 @@ export default function HomeHeroBanner() {
           <div
             className="py-5 row m-0 px-0"
             style={{
-              background: `linear-gradient(to top, #150b27 14%, #4f349d 91%)`,
+              background: linear-gradient(to top, #150b27 14%, #4f349d 91%),
               height: "40vh",
               width: isSliderHovered ? "55px" : "24px",
               borderTopLeftRadius: 25,
@@ -191,7 +233,7 @@ export default function HomeHeroBanner() {
             <BsDownload color={BaseColors.textGrey} size={25} />
             <FiSettings color={BaseColors.textGrey} size={25} />
           </div>
-        </div>
+        </div> */}
       </div>
       <PrimaryModal
         open={isModalOpen}

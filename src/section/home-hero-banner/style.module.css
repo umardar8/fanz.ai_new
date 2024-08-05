@@ -1,0 +1,12 @@
+.bannerMain {
+    background: url(../../assets/background.jpg);
+    height: 99vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 5%;
+}
+
+/* .bannerRow{
+    padding-top: 120px;
+} */

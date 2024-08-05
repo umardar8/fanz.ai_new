@@ -14,7 +14,8 @@ export default function NotFoundUser() {
                     <PrimaryButton 
                         label='Back to Home' 
                         btnClassName='my-4 px-4 rounded text-black flex' 
-                        background='white' 
+                        background='white'
+                        onClick={()=> window.open("/", "_self")}
                     />
                 </div>
             </div>

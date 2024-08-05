@@ -153,7 +153,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (window.innerWidth < 450) {
+    if (window.innerWidth < 992) {
       setIsShow(true);
     }
   }, []);
@@ -177,7 +177,7 @@ export default function Home() {
           >
             {!isShow ? (
               <>
-                {/* <WeatherPanel /> */}
+                <WeatherPanel />
                 <AdsCard />
               </>
             ) : (
@@ -185,7 +185,7 @@ export default function Home() {
                 <div
                   className="p-2 "
                   style={{
-                    background: `rgb(33, 48, 67, 0.8)`,
+                    background: "rgb(33, 48, 67, 0.8)",
                     borderTopRightRadius: "20px",
                     borderBottomRightRadius: "20px",
                     width: isWeather ? "400px" : "18px",
@@ -249,7 +249,7 @@ export default function Home() {
         <div
           className="row mx-0 justify-content-end p-0 "
           style={{
-            background: `linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)`,
+            background: "linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)",
             marginTop: "-10%",
             zIndex: 0,
           }}
@@ -258,7 +258,7 @@ export default function Home() {
             <div
               className="row m-0 justify-content-md-start p-0 px-xl-5 px-auto "
               style={{
-                background: `linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)`,
+                background: "linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)",
                 backdropFilter: "blur(4px)",
                 TopLeftRadius: 80,
                 BottomLeftRadius: 80,
@@ -346,7 +346,7 @@ export default function Home() {
           className="row text-center mx-0"
           style={{
             maxHeight: "5vh",
-            color: `rgb(255, 219, 43, 0.8)`,
+            color: "rgb(255, 219, 43, 0.8)",
           }}
         >
           <h5>
