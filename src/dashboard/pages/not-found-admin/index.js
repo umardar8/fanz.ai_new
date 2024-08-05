@@ -17,7 +17,11 @@ export default function NotFoundAdmin() {
                     </div>
                     <h4>Oops! You're lost.</h4>
                     <h6>The page you are looking for is not found.</h6>
-                    <PrimaryButton label='Back to Dashboard' btnClassName='my-4 px-4' background='black' />
+                    <PrimaryButton 
+                        label='Back to Dashboard' 
+                        btnClassName='my-4 px-4' 
+                        background='black'
+                        onClick={ () => window.open("/super-admin-dashboard", "_self") } />
                 </div>
             </div>
         </Layout>
