@@ -7,8 +7,9 @@ const WeatherPanel = () => {
 
     // location of user for use in API call.
     // const [location, setLocation] = useState({});
-    const [latitude, setLatitude] = useState(0);
-    const [longitude, setLongitude] = useState(0);
+    const [latitude, setLatitude] = useState();
+    const [longitude, setLongitude] = useState();
+    
 
     // get current location of visitor.
     navigator.geolocation.getCurrentPosition(success, err)
@@ -16,6 +17,8 @@ const WeatherPanel = () => {
     function success(position) {
         setLatitude(position.coords.latitude);
         setLongitude(position.coords.longitude);
+        console.log('latitude: ', latitude);
+        console.log('longitude: ', longitude);
     }
 
     function err() {
@@ -34,7 +37,7 @@ const WeatherPanel = () => {
         data: weather,
         error,
         isValidating,
-    } = useSWR(`${api.base}?key=${api.key}&q=${latitude},${longitude}&days=2&aqi=no&alerts=no`, fetcher);
+    } = useSWR(`https://api.weatherapi.com/v1/forecast.json?key=3aa4bf838d804c0cb33120407240902&q=${latitude},${longitude}&days=2&aqi=no&alerts=no`, fetcher);
 
     // Handles error and loading state
     if (error) return <div className='failed'>failed to load</div>;
