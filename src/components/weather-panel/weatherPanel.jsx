@@ -7,8 +7,8 @@ const WeatherPanel = () => {
 
     // location of user for use in API call.
     // const [location, setLocation] = useState({});
-    const [latitude, setLatitude] = useState();
-    const [longitude, setLongitude] = useState();
+    const [latitude, setLatitude] = useState(25.0762804);
+    const [longitude, setLongitude] = useState(54.8978242);
     
 
     // get current location of visitor.
@@ -101,11 +101,17 @@ const WeatherPanel = () => {
 
     return (
         <div className='weatherPanel'>
-            <WeatherCard name={cityName} temp={current.temp_f} icon={current.condition.icon} date={format(weather.location.localtime, "d")} time={format(weather.location.localtime, "t")}/>
-            <WeatherCard name={cityName} temp={forecast1.temp_f} icon={forecast1.condition.icon} date={format(forecast1.time, "d")} time={format(forecast1.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast2.temp_f} icon={forecast2.condition.icon} date={format(forecast2.time, "d")} time={format(forecast2.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast3.temp_f} icon={forecast2.condition.icon} date={format(forecast3.time, "d")} time={format(forecast3.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast4.temp_f} icon={forecast2.condition.icon} date={format(forecast4.time, "d")} time={format(forecast4.time, "t")}/>
+            {!longitude ? (
+                <p>unable to fetch location.. please allow in the popup or reload your page.</p>
+            ) : (
+                <>    
+                    <WeatherCard name={cityName} temp={current.temp_f} icon={current.condition.icon} date={format(weather.location.localtime, "d")} time={format(weather.location.localtime, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast1.temp_f} icon={forecast1.condition.icon} date={format(forecast1.time, "d")} time={format(forecast1.time, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast2.temp_f} icon={forecast2.condition.icon} date={format(forecast2.time, "d")} time={format(forecast2.time, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast3.temp_f} icon={forecast2.condition.icon} date={format(forecast3.time, "d")} time={format(forecast3.time, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast4.temp_f} icon={forecast2.condition.icon} date={format(forecast4.time, "d")} time={format(forecast4.time, "t")}/>
+                </>
+            )}
         </div>
     );
 };
