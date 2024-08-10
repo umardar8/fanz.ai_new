@@ -62,13 +62,13 @@ export default function HomeHeroBanner() {
                 text ever since the 1500s,
               </p>
               <div
-                className="text-family fs-4 fw-normal"
+                className="text-family fs-4 fw-bold"
                 style={{ color: BaseColors.danger }}
               >
-                Genres
+                GENRES
               </div>
               <div className="text-family fs-4 fw-normal text-white">
-                News Highlights
+                News, Headlines
               </div>
               <div className="d-flex  py-4">
                 <PrimaryButton
@@ -90,8 +90,8 @@ export default function HomeHeroBanner() {
                 />
               </div>
               <div className="d-flex justify-content-start">
-                <div className="d-flex me-3">
-                  <FaStar size={16} color={BaseColors.yellow} />
+                <div className="d-flex me-3 align-items-center">
+                  <FaStar size={16} color={BaseColors.yellow} className="mb-2" />
                   <h5
                     className="px-2 text-family fs-4 fw-normal-2"
                     style={{ color: BaseColors.yellow }}
@@ -100,7 +100,7 @@ export default function HomeHeroBanner() {
                   </h5>
                 </div>
                 <div
-                  className="border mx-2 row align-items-center"
+                  className="border mx-2 row align-items-center pt-2"
                   style={{ borderRadius: 8 }}
                 >
                   <h5 className="px-2" style={{ color: BaseColors.white }}>
@@ -108,7 +108,7 @@ export default function HomeHeroBanner() {
                   </h5>
                 </div>
                 <div
-                  className="border mx-2 row align-items-center"
+                  className="border mx-2 row align-items-center pt-2"
                   style={{ borderRadius: 8 }}
                 >
                   <h5 className="px-2" style={{ color: BaseColors.white }}>
@@ -141,13 +141,13 @@ export default function HomeHeroBanner() {
               style={{
                 background: "rgb(92, 92, 92, 0.7)",
                 height: "45%",
-                borderTopLeftRadius: 25,
-                borderTopRightRadius: 25,
+                borderTopLeftRadius: '25px',
+                borderTopRightRadius: '25px',
                 padding: 20,
                 width: "25%",
               }}
             >
-              <div className="text-family fs-4 fw-normal text-white py-3">
+              <div className="text-family heading-size-1 fw-bold text-white py-3">
                 TOP STORIES OF THE DAY
               </div>
               <TopStoryCard />
