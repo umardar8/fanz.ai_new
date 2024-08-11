@@ -401,6 +401,18 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.text-size-1 {
+  font-size: calc(11px + 0.390625vw);
+}
+
+.text-size-2 {
+  font-size: calc(5px + 0.390625vw);
+}
+
+.text-size-3 {
+  font-size: calc(18px + 0.390625vw);
+}
+
 @keyframes move {
   0% {
     transform: translateX(100%);
@@ -410,15 +422,27 @@
   }
 }
 
-.weatherPanel {
-  border-radius: 20px;
-  background-color: rgb(33, 48, 67, 0.8);
-  padding: 15px;
-  color: white;
-  font-family: Montserrat;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@media only screen and (min-width: 320px) {
+  .weatherPanel {
+    color: white;
+    font-family: Montserrat;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .weatherPanel {
+    border-radius: 20px;
+    background-color: rgb(33, 48, 67, 0.8);
+    padding: 15px;
+    color: white;
+    font-family: Montserrat;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .weatherPanel2 {
@@ -430,12 +454,7 @@
   align-items: center;
   justify-content: center;
 }
-.weatherCard {
-  padding: 10px;
-  border-radius: 15px;
-  background-color: #141c29;
-  margin-bottom: 15px;
-}
+
 .modal-container {
   display: flex;
   height: 720px;

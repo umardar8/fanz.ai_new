@@ -7,12 +7,14 @@ import { LuEye } from "react-icons/lu";
 const Tcards = (props) => {
   return (
     <div className="px-3">
-      <img
-        src={props.thumb}
-        alt=""
-        style={{ height: "37vh" }}
-        className="rounded shadow-1 mb-2 "
-      />
+      <div style={{overflow: "clip"}}>
+        <img
+          src={props.thumb}
+          alt=""
+          style={{ height: "37vh", borderRadius: '15px' }}
+          className="shadow-1 mb-2"
+        />
+      </div>
       <div className="text-family fs-4 fw-normal text-white">{props.head}</div>
       <div style={{ color: BaseColors.textGrey, fontSize: "0.9rem" }}>
         {props.year}

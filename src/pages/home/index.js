@@ -27,7 +27,7 @@ const cardData = [
   {
     thumb:
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
-    head: "Techs Talk",
+    head: "Tech Talk",
     year: "2013",
     rating: "7.7",
   },
@@ -55,7 +55,7 @@ const cardData = [
   {
     thumb:
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
-    head: "Techs Talk",
+    head: "Tech Talk",
     year: "2013",
     rating: "7.7",
   },
@@ -83,7 +83,7 @@ const cardData = [
   {
     thumb:
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",
-    head: "Techs Talk",
+    head: "Tech Talk",
     year: "2013",
     rating: "7.7",
   },
@@ -171,7 +171,7 @@ export default function Home() {
             className={
               !isShow
                 ? "col-11 col-md-4 col-xl-3  d-flex flex-column justify-content-between  p-0 m-0"
-                : "col-12 col-md-4 col-xl-3  d-flex justify-content-between align-items-start border  px-0 m-0 "
+                : "col-12 col-md-4 col-xl-3  d-flex justify-content-between align-items-start  px-0 m-0 "
             }
             style={{ height: "100%", zIndex: 4 }}
           >
@@ -191,13 +191,14 @@ export default function Home() {
                     width: isWeather ? "400px" : "18px",
                     zIndex: 4,
                     transition: "width 0.3s ease",
-                    minHeight: "340px",
+                    maxHeight: isWeather ? "610px" : "340px",
+                    overflow: isWeather ? "visible" : "hidden"
                   }}
                   onMouseEnter={() => {
                     setIsWeather(true);
                     setIsPrice(false);
                   }}
-                  onMouseLeave={() => setIsPrice(false)}
+                  onMouseLeave={() => setIsWeather(false)}
                 >
                   <WeatherPanel
                     btnClassName={
@@ -260,6 +261,7 @@ export default function Home() {
               style={{
                 background: "linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)",
                 backdropFilter: "blur(4px)",
+                borderRadius: "20px",
                 TopLeftRadius: 80,
                 BottomLeftRadius: 80,
               }}

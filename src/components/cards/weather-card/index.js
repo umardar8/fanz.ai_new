@@ -2,60 +2,47 @@ import "../../../App.css";
 
 const WeatherCard = ({ name, temp, icon, date, time }) => {
   return (
-    <div className="weatherCard row mx-0 align-items-center">
-      <div className="col-7 temperature d-flex p-0">
-        <div>
+    <div 
+      className="d-flex row mx-0 px-0 py-2 mt-3 align-items-center justify-content-center overflow-hidden"
+      style={{ backgroundColor: '#141c29', borderRadius: '15px' }}
+    >
+      {/* <div className="col-7 temperature d-flex p-0"> */}
+        <div className="d-flex row col-2 p-0 m-0">
           <img
             src={icon}
             alt="weather icon"
-            style={{ height: 38, width: 38 }}
+            height='3rem'
+            width='3rem'
           />
           <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              fontSize: 9,
-              fontWeight: 400,
-            }}
-          >
+            className="text-size-2 d-flex fw-bolder">
             {temp} °F
           </div>
         </div>
-        <div>
+        <div className="col-6 fw-normal text-size-1 py-4 ps-1">
+          {/* <div className="fw-normal text-size-1 p-4"> */}
+            {name}
+          {/* </div> */}
+        </div>
+      {/* </div> */}
+
+      {/* <div className="col-5 dateTime"> */}
+        <div className="col-4">
+          <div className="fw-bolder text-size-1 text-end pb-2">
+            {time}
+          </div>
           <div
-            className="heading-2 fw-normal"
+            className="text-family text-size-2"
             style={{
-              paddingRight: 10,
-              paddingTop: 10,
+              fontWeight: 400,
+              textAlign: "right",
+              // marginTop: -20,
             }}
           >
-            {name}
+            {date}
           </div>
         </div>
-      </div>
-
-      <div className="col-5 dateTime">
-        <div
-          className="heading-2 fw-bolder"
-          style={{
-            textAlign: "right",
-            lineHeight: "3.8rem",
-          }}
-        >
-          {time}
-        </div>
-        <div
-          className="text-family "
-          style={{
-            fontSize: 9,
-            fontWeight: 400,
-            textAlign: "right",
-            // marginTop: -20,
-          }}
-        >
-          {date}
-        </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

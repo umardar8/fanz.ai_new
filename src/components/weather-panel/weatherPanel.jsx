@@ -6,9 +6,11 @@ import '../../App.css';
 const WeatherPanel = () => {
 
     // location of user for use in API call.
-    // const [location, setLocation] = useState({});
-    const [latitude, setLatitude] = useState(0);
-    const [longitude, setLongitude] = useState(0);
+    const [latitude, setLatitude] = useState(25.0762789);
+    const [longitude, setLongitude] = useState(54.8971371);
+
+    // handle mobile view
+    const [isShow, setIsShow] = useState(false);
 
     // get current location of visitor.
     navigator.geolocation.getCurrentPosition(success, err)
@@ -16,11 +18,19 @@ const WeatherPanel = () => {
     function success(position) {
         setLatitude(position.coords.latitude);
         setLongitude(position.coords.longitude);
+        console.log('latitude: ', latitude);
+        console.log('longitude: ', longitude);
     }
 
     function err() {
         console.log("Unable to retrieve your location");
     }
+
+    // const options = {
+    //     maximumAge: 1800000,
+    //     timeout: 5000,
+    //     enableHighAccuracy: false,
+    // }
 
     // Method and Variables for API call to get weather.
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -98,11 +108,17 @@ const WeatherPanel = () => {
 
     return (
         <div className='weatherPanel'>
-            <WeatherCard name={cityName} temp={current.temp_f} icon={current.condition.icon} date={format(weather.location.localtime, "d")} time={format(weather.location.localtime, "t")}/>
-            <WeatherCard name={cityName} temp={forecast1.temp_f} icon={forecast1.condition.icon} date={format(forecast1.time, "d")} time={format(forecast1.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast2.temp_f} icon={forecast2.condition.icon} date={format(forecast2.time, "d")} time={format(forecast2.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast3.temp_f} icon={forecast2.condition.icon} date={format(forecast3.time, "d")} time={format(forecast3.time, "t")}/>
-            <WeatherCard name={cityName} temp={forecast4.temp_f} icon={forecast2.condition.icon} date={format(forecast4.time, "d")} time={format(forecast4.time, "t")}/>
+            {!longitude ? (
+                <p>unable to fetch location.. please allow in the popup or reload your page.</p>
+            ) : (
+                <>
+                    <WeatherCard name={cityName} temp={current.temp_f} icon={current.condition.icon} date={format(weather.location.localtime, "d")} time={format(weather.location.localtime, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast1.temp_f} icon={forecast1.condition.icon} date={format(forecast1.time, "d")} time={format(forecast1.time, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast2.temp_f} icon={forecast2.condition.icon} date={format(forecast2.time, "d")} time={format(forecast2.time, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast3.temp_f} icon={forecast2.condition.icon} date={format(forecast3.time, "d")} time={format(forecast3.time, "t")}/>
+                    <WeatherCard name={cityName} temp={forecast4.temp_f} icon={forecast2.condition.icon} date={format(forecast4.time, "d")} time={format(forecast4.time, "t")}/>
+                </>
+            )}
         </div>
     );
 };

@@ -17,13 +17,13 @@ export default function AdsCard(props) {
 
   return (
     <>
-      <div class={btnClassName ? btnClassName : "card adsCard"} style={addCard}>
-        <div class="card-body">
+      <div className={btnClassName ? btnClassName : "card adsCard"} style={addCard}>
+        <div className="card-body">
           <div>
             <p style={{ textAlign: "right", color: "yellow" }}>ADS</p>
           </div>
           <h5
-            class="card-title"
+            className="card-title"
             style={{
               fontSize: "2.5rem",
               fontWeight: "bold",
@@ -35,7 +35,7 @@ export default function AdsCard(props) {
           </h5>
           <img
             src={ads}
-            class="card-img-top"
+            className="card-img-top"
             alt="Advertisement"
             style={{ width: " 283px", height: " 280px" }}
           />

@@ -1,10 +1,10 @@
 import React from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faFacebookF,
-//   faLinkedinIn,
-//   faTwitter,
-// } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function WebFooter() {
   return (
@@ -89,15 +89,15 @@ export default function WebFooter() {
               <h2 className="footer-call-to-action-title"> FOLLOW US</h2>
               <div className="social-icons-container">
                 <div className="social-icon facebook">
-                  {/* <FontAwesomeIcon icon={faFacebookF} className="icon" /> */}
+                  <FontAwesomeIcon icon={faFacebookF} className="icon" />
                 </div>
 
                 <div className="social-icon linkedin">
-                  {/* <FontAwesomeIcon icon={faLinkedinIn} className="icon" /> */}
+                  <FontAwesomeIcon icon={faLinkedinIn} className="icon" />
                 </div>
 
                 <div className="social-icon twitter">
-                  {/* <FontAwesomeIcon icon={faTwitter} className="icon" /> */}
+                  <FontAwesomeIcon icon={faTwitter} className="icon" />
                 </div>
               </div>
             </div>
