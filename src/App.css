@@ -401,17 +401,61 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.text-size-1 {
+.heading-size-1 {
+  font-size: calc(24px + 8 * ((100vw - 320px) / 680));
+  line-height: calc(24px + 8 * ((100vw - 320px) / 680));
+  font-family: "Montserrat", sans-serif;
+}
+
+.heading-size-2 {
   font-size: calc(11px + 0.390625vw);
+  font-family: "Montserrat", sans-serif;
+}
+
+.subheading-size-1 {
+  font-size: calc(15px + 0.390625vw);
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-size-0 {
+  font-size: calc(8px + 0.390625vw);
+  font-family: "Montserrat", sans-serif;
+}
+.text-size-1 {
+  font-size: calc(9.5px + 0.390625vw);
+  font-family: "Montserrat", sans-serif;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+/* .text-size-1 {
+  font-size: calc(11px + 0.390625vw);
+  font-family: "Montserrat", sans-serif;
 }
 
 .text-size-2 {
   font-size: calc(5px + 0.390625vw);
+  font-family: "Montserrat", sans-serif;
 }
 
 .text-size-3 {
   font-size: calc(18px + 0.390625vw);
-}
+  font-family: "Montserrat", sans-serif;
+} */
 
 @keyframes move {
   0% {
@@ -422,28 +466,16 @@
   }
 }
 
-@media only screen and (min-width: 320px) {
-  .weatherPanel {
-    color: white;
-    font-family: Montserrat;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media only screen and (min-width: 450px) {
-  .weatherPanel {
-    border-radius: 20px;
-    background-color: rgb(33, 48, 67, 0.8);
-    padding: 15px;
-    color: white;
-    font-family: Montserrat;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
+/* .weatherPanel {
+  border-radius: 20px;
+  background-color: rgb(33, 48, 67, 0.8);
+  padding: 15px;
+  color: white;
+  font-family: Montserrat;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
 
 .weatherPanel2 {
   border-radius: 20px;

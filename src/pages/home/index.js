@@ -18,103 +18,103 @@ import { IoPricetags } from "react-icons/io5";
 
 const cardData = [
   {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
-    head: "Tech Talk",
-    year: "2013",
+    thumb: "https://image.isu.pub/201209072748-c9bec801565ed28444d559c325908173/jpg/page_1.jpg",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg",
+    head: "Education",
+    year: "2024",
+    rating: "8.4",
+  },
+  {
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZZj3LjMi9uSu_F9GtpT0Fd8bqlKMpqxW4IQ&s",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
+    head: "Climate",
+    year: "2024",
+    rating: "9.5",
+  },
+  {
+    thumb: "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F03b4f998-7ad1-49d4-98a0-8d883d781602_1240x1737.jpeg",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
+    head: "Career",
+    year: "2024",
+    rating: "8.9",
+  },
+  {
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN4tGn1f_3LCIciYNVRSsYsMgMi0XWnMmsDQ&s",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
+    head: "Scholarships",
+    year: "2024",
+    rating: "8.9",
+  },
+  {
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsMQbjMZSO3TKLrqwYv4PMbNGoJIMmcwKH_A&s",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
+    head: "Tech Talks",
+    year: "2024",
+    rating: "8.8",
+  },
+  {
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS07Q1pkvGBUBFNuMjHn0uP_yZggf3gvxFhFQ&s",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
+    head: "Career",
+    year: "2024",
+    rating: "8.2",
+  },
+  {
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTNrrRTT6JiXpdsdq7mO8G13LpxEXKztv10g&s",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
+    head: "Climate",
+    year: "2024",
     rating: "7.7",
   },
   {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg",
-    head: "Tech Talk",
-    year: "2013",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFQo-ybF84DXzKGVIj5hQC1F_cj82R5w107w&s",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
+    head: "Technology",
+    year: "2024",
     rating: "7.7",
   },
   {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
+    thumb: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-11576413129.jpg",
+      // "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg",
+    head: "Documentary",
+    year: "2024",
+    rating: "7.6",
   },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerEscapes.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerFun.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerJoyrides.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerMeltdowns.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/Sintel.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/SubaruOutbackOnStreetAndDirt.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
-  {
-    thumb:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
-    head: "Tech Talk",
-    year: "2013",
-    rating: "7.7",
-  },
+  // {
+  //   thumb:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/TearsOfSteel.jpg",
+  //   head: "Tech Talk",
+  //   year: "2013",
+  //   rating: "7.7",
+  // },
+  // {
+  //   thumb:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/VolkswagenGTIReview.jpg",
+  //   head: "Tech Talk",
+  //   year: "2013",
+  //   rating: "7.7",
+  // },
+  // {
+  //   thumb:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WeAreGoingOnBullrun.jpg",
+  //   head: "Tech Talk",
+  //   year: "2013",
+  //   rating: "7.7",
+  // },
+  // {
+  //   thumb:
+  //     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/WhatCarCanYouGetForAGrand.jpg",
+  //   head: "Tech Talk",
+  //   year: "2013",
+  //   rating: "7.7",
+  // },
 ];
 
 export default function Home() {
   const [isShow, setIsShow] = useState(false);
   const [isWeather, setIsWeather] = useState(false);
   const [isPrice, setIsPrice] = useState(false);
-  const [slidesToShow, setSlidesToShow] = useState();
+  const [slidesToShow, setSlidesToShow] = useState(3);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -124,19 +124,28 @@ export default function Home() {
     setIsModalOpen(false);
   };
 
+  // extended breakpoints for responsiveness and changed slidesToShow according to screens
   const handleResize = () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 1300) {
       setIsShow(false);
       setSlidesToShow(4);
-    } else if (window.innerWidth < 768 && window.innerWidth > 450) {
+    } else if (window.innerWidth >= 992 && window.innerWidth < 1300) {
+      setIsShow(false);
+      setSlidesToShow(3);
+    } else if (window.innerWidth >= 768 && window.innerWidth < 992 ) {
       setIsShow(true);
       setSlidesToShow(3);
+    } else if (window.innerWidth >= 450 && window.innerWidth < 768 ) {
+      setIsShow(true);
+      setSlidesToShow(2);
     } else {
+      setIsShow(true);
       setSlidesToShow(1);
     }
   };
 
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -152,12 +161,6 @@ export default function Home() {
     setIsPrice(true);
   };
 
-  useEffect(() => {
-    if (window.innerWidth < 992) {
-      setIsShow(true);
-    }
-  }, []);
-
   return (
     <Layout>
       <HomeHeroBanner />
@@ -171,7 +174,7 @@ export default function Home() {
             className={
               !isShow
                 ? "col-11 col-md-4 col-xl-3  d-flex flex-column justify-content-between  p-0 m-0"
-                : "col-12 col-md-4 col-xl-3  d-flex justify-content-between align-items-start  px-0 m-0 "
+                : "col-12 d-flex justify-content-between align-items-start  px-0 m-0 "
             }
             style={{ height: "100%", zIndex: 4 }}
           >
@@ -191,7 +194,7 @@ export default function Home() {
                     width: isWeather ? "400px" : "18px",
                     zIndex: 4,
                     transition: "width 0.3s ease",
-                    maxHeight: isWeather ? "610px" : "340px",
+                    height: isWeather ? "610px" : "340px",
                     overflow: isWeather ? "visible" : "hidden"
                   }}
                   onMouseEnter={() => {
@@ -201,7 +204,7 @@ export default function Home() {
                   onMouseLeave={() => setIsWeather(false)}
                 >
                   <WeatherPanel
-                    btnClassName={
+                    cardClassName={
                       isWeather
                         ? "weatherPanel2 d-block"
                         : "weatherPanel2 d-none"
@@ -255,7 +258,8 @@ export default function Home() {
             zIndex: 0,
           }}
         >
-          <div className="col col-lg-9 col-xl-10 ps-5 pe-0 ">
+          {/* added px-sm-4 to center the carousel on small screens */}
+          <div className="col col-lg-9 col-xl-10 px-sm-4 px-lg-0 ps-lg-5 pe-0 "> 
             <div
               className="row m-0 justify-content-md-start p-0 px-xl-5 px-auto "
               style={{
@@ -347,8 +351,9 @@ export default function Home() {
         <div
           className="row text-center mx-0"
           style={{
-            maxHeight: "5vh",
+            maxHeight: "4.5vh",
             color: "rgb(255, 219, 43, 0.8)",
+            overflow: "hidden"
           }}
         >
           <h5>

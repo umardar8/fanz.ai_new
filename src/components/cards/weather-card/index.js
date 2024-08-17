@@ -7,7 +7,7 @@ const WeatherCard = ({ name, temp, icon, date, time }) => {
       style={{ backgroundColor: '#141c29', borderRadius: '15px' }}
     >
       {/* <div className="col-7 temperature d-flex p-0"> */}
-        <div className="d-flex row col-2 p-0 m-0">
+        <div className="d-flex row col-3 p-0 m-0">
           <img
             src={icon}
             alt="weather icon"
@@ -15,11 +15,11 @@ const WeatherCard = ({ name, temp, icon, date, time }) => {
             width='3rem'
           />
           <div
-            className="text-size-2 d-flex fw-bolder">
+            className="text-size-0 d-flex justify-content-center">
             {temp} °F
           </div>
         </div>
-        <div className="col-6 fw-normal text-size-1 py-4 ps-1">
+        <div className="col-5 fw-600 text-size-1 py-4 ps-1">
           {/* <div className="fw-normal text-size-1 p-4"> */}
             {name}
           {/* </div> */}
@@ -28,16 +28,11 @@ const WeatherCard = ({ name, temp, icon, date, time }) => {
 
       {/* <div className="col-5 dateTime"> */}
         <div className="col-4">
-          <div className="fw-bolder text-size-1 text-end pb-2">
+          <div className=" text-size-1 fw-600 text-end pb-2">
             {time}
           </div>
           <div
-            className="text-family text-size-2"
-            style={{
-              fontWeight: 400,
-              textAlign: "right",
-              // marginTop: -20,
-            }}
+            className="text-size-0 text-end"
           >
             {date}
           </div>

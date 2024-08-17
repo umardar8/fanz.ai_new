@@ -11,7 +11,7 @@ export default function PrimaryCarousel(props) {
 
   const sliderSettings = {
     arrows: false,
-    slidesToShow: slidesToShow || 4,
+    slidesToShow: slidesToShow ? slidesToShow : 4,
     slidesToScroll: 1,
     infinite: true,
     dots: false,
@@ -52,7 +52,7 @@ export default function PrimaryCarousel(props) {
       >
         <div className="col-11 ">
           <div
-            className="text-family text-size-3 fw-normal text-white py-3 text-uppercase"
+            className="heading-size-1 fw-700 text-white py-3 text-uppercase"
           >
             {title ? title : "--"}
           </div>

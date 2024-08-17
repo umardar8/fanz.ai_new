@@ -3,11 +3,12 @@ import useSWR from 'swr';
 import WeatherCard from '../cards/weather-card';
 import '../../App.css';
 
-const WeatherPanel = () => {
+const WeatherPanel = ( props ) => {
 
+    const { cardClassName } = props;
     // location of user for use in API call.
-    const [latitude, setLatitude] = useState(25.0762789);
-    const [longitude, setLongitude] = useState(54.8971371);
+    const [latitude, setLatitude] = useState(25.3199447);
+    const [longitude, setLongitude] = useState(55.5462772);
 
     // handle mobile view
     const [isShow, setIsShow] = useState(false);
@@ -107,7 +108,18 @@ const WeatherPanel = () => {
     var forecast4 = weather.forecast.forecastday[getIndex(4,'d')].hour[getIndex(4,'h')];
 
     return (
-        <div className='weatherPanel'>
+        <div className={cardClassName}
+            style={{
+                borderRadius: "20px",
+                background: "rgb(33, 48, 67, 0.8)",
+                padding: "15px",
+                color: "white",
+                fontFamily: "Montserrat",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+            }}
+        >
             {!longitude ? (
                 <p>unable to fetch location.. please allow in the popup or reload your page.</p>
             ) : (
