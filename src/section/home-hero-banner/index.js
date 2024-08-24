@@ -13,7 +13,7 @@ import { FaStar } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import PrimaryModal from "../../components/modal";
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 
 export default function HomeHeroBanner() {
   const [isSliderHovered, setIsSliderHovered] = useState(false);
@@ -42,7 +42,7 @@ export default function HomeHeroBanner() {
         >
           <div
             className="col-11 col-lg-9 col-xl-8 d-flex flex-column justify-content-center align-self-center ps-md-5"
-          // style={{ zIndex: "4" }}
+            // style={{ zIndex: "4" }}
           >
             <div style={{ maxWidth: "80%", paddingTop: "12%" }}>
               <PrimaryButton
@@ -54,7 +54,8 @@ export default function HomeHeroBanner() {
                 leftIcon={<FaWifi />}
               />
               <p className="heading-1 text-white">
-                Guddu in spotlight after Sunday's<br className="d-none d-lg-block"/> power breakdown
+                Guddu in spotlight after Sunday's
+                <br className="d-none d-lg-block" /> power breakdown
               </p>
               <p className="text-family text-white fs-5 fw-normal">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -67,7 +68,7 @@ export default function HomeHeroBanner() {
               >
                 GENRES
               </div>
-              <div className="text-family fs-4 fw-normal text-white">
+              <div className="text-family fs-5 fw-normal text-white">
                 News, Headlines
               </div>
               <div className="d-flex  py-4">
@@ -77,7 +78,7 @@ export default function HomeHeroBanner() {
                   //   console.log("Button clicked!");
                   // }}
                   rightIcon={<FaPlay />}
-                  fontSize="1.3rem"
+                  fontSize="1rem"
                   marginRight="5px"
                   padding="20px"
                 />
@@ -85,15 +86,19 @@ export default function HomeHeroBanner() {
                   label="MY LIST"
                   rightIcon={<IoMdAdd />}
                   background={BaseColors.light_grey}
-                  fontSize="1.3rem"
+                  fontSize="1rem"
                   padding="20px"
                 />
               </div>
               <div className="d-flex justify-content-start">
                 <div className="d-flex me-3 align-items-center">
-                  <FaStar size={16} color={BaseColors.yellow} className="mb-2" />
+                  <FaStar
+                    size={16}
+                    color={BaseColors.yellow}
+                    className="mb-2"
+                  />
                   <h5
-                    className="px-2 text-family fs-4 fw-normal-2"
+                    className="px-2 text-family fs-5 fw-normal-2"
                     style={{ color: BaseColors.yellow }}
                   >
                     7.3
@@ -103,7 +108,7 @@ export default function HomeHeroBanner() {
                   className="border mx-2 row align-items-center pt-2"
                   style={{ borderRadius: 8 }}
                 >
-                  <h5 className="px-2" style={{ color: BaseColors.white }}>
+                  <h5 className="px-2 fs-5" style={{ color: BaseColors.white }}>
                     U/A
                   </h5>
                 </div>
@@ -111,13 +116,13 @@ export default function HomeHeroBanner() {
                   className="border mx-2 row align-items-center pt-2"
                   style={{ borderRadius: 8 }}
                 >
-                  <h5 className="px-2" style={{ color: BaseColors.white }}>
+                  <h5 className="px-2 fs-5" style={{ color: BaseColors.white }}>
                     4K
                   </h5>
                 </div>
-                <div className="d-flex">
+                <div className="d-flex align-items-center">
                   <h5
-                    className="px-2 text-family fs-4 fw-normal"
+                    className="px-2 text-family fs-5 fw-normal"
                     style={{ color: BaseColors.textGrey }}
                   >
                     2024
@@ -129,20 +134,18 @@ export default function HomeHeroBanner() {
 
           <div
             className="d-none d-lg-flex justify-content-end align-items-end position-absolute m-0 p-0"
-            style={
-              {
-                right: '10%',
-                // left: '65%',
-              }
-            }
+            style={{
+              right: "10%",
+              // left: '65%',
+            }}
           >
             <div
               className="justify-content-center text-center"
               style={{
                 background: "rgb(92, 92, 92, 0.7)",
                 height: "45%",
-                borderTopLeftRadius: '25px',
-                borderTopRightRadius: '25px',
+                borderTopLeftRadius: "25px",
+                borderTopRightRadius: "25px",
                 padding: 20,
                 width: "25%",
               }}
@@ -155,7 +158,6 @@ export default function HomeHeroBanner() {
               <TopStoryCard />
             </div>
           </div>
-         
 
           <div
             className="py-5 row m-0 px-0 position-absolute"
@@ -167,8 +169,8 @@ export default function HomeHeroBanner() {
               borderBottomLeftRadius: 25,
               transition: "width 0.3s ease",
               right: 0,
-              left: 'auto',
-              top: '30%'
+              left: "auto",
+              top: "30%",
             }}
           >
             <RiGroupLine color={BaseColors.textGrey} size={25} />

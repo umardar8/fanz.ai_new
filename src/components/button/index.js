@@ -34,7 +34,7 @@ export default function PrimaryButton(props) {
               fontSize: fontSize ? fontSize : `1rem`,
               marginRight: marginRight ? marginRight : "none",
               padding: padding ? padding : "auto",
-              width: btnWidth ? btnWidth : "auto"
+              width: btnWidth ? btnWidth : "auto",
             }
       }
       leftIcon={leftIcon}

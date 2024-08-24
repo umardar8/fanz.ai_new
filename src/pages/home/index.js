@@ -23,6 +23,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -30,6 +31,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -37,6 +39,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -44,6 +47,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -51,6 +55,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -58,6 +63,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -65,6 +71,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -72,6 +79,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -79,6 +87,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -86,6 +95,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -93,6 +103,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -100,6 +111,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
   {
     thumb:
@@ -107,6 +119,7 @@ const cardData = [
     head: "Tech Talk",
     year: "2013",
     rating: "7.7",
+    islike: true,
   },
 ];
 
@@ -116,6 +129,8 @@ export default function Home() {
   const [isPrice, setIsPrice] = useState(false);
   const [slidesToShow, setSlidesToShow] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isLoad, setIsLoad] = useState(false);
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -158,6 +173,14 @@ export default function Home() {
     }
   }, []);
 
+  //=============== Toggle igation ===============//
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+  const handleLoadMore = () => {
+    setIsLoad(!isLoad);
+  };
+
   return (
     <Layout>
       <HomeHeroBanner />
@@ -165,7 +188,7 @@ export default function Home() {
         {/* {!isShow ? ( */}
         <div
           className="row position-absolute m-0 p-0 justify-content-between "
-          style={{ top: !isShow ? "-5%" : "10%", height: "100%" }}
+          style={{ top: !isShow ? "-8%" : "10%", height: "100%" }}
         >
           <div
             className={
@@ -178,7 +201,7 @@ export default function Home() {
             {!isShow ? (
               <>
                 <WeatherPanel />
-                <AdsCard />
+                {isLoad && <AdsCard />}
               </>
             ) : (
               <>
@@ -192,7 +215,7 @@ export default function Home() {
                     zIndex: 4,
                     transition: "width 0.3s ease",
                     maxHeight: isWeather ? "610px" : "340px",
-                    overflow: isWeather ? "visible" : "hidden"
+                    overflow: isWeather ? "visible" : "hidden",
                   }}
                   onMouseEnter={() => {
                     setIsWeather(true);
@@ -209,7 +232,7 @@ export default function Home() {
                   />
                 </div>
                 <div
-                  className="p-2 "
+                  className="p-2"
                   style={{
                     backgroundColor: "#282828",
                     borderTopLeftRadius: "20px",
@@ -234,23 +257,31 @@ export default function Home() {
               </>
             )}
           </div>
-          <div className="col-2 p-0 d-none d-xl-block " style={{ zIndex: 4 }}>
+          <div
+            className="col-2 p-0 d-none d-xl-block"
+            style={{ zIndex: 4, marginTop: "-5%" }}
+          >
             <GrUp
               size={30}
-              style={{
-                // opacity: isSliderHovered ? "0.8" : "0",
-                color: BaseColors.white,
-                transition: "opacity 0.3s ease",
-              }}
+              // style={{
+              //   // opacity: isSliderHovered ? "0.8" : "0",
+              //   color: BaseColors.white,
+              //   // transition: "opacity 0.3s ease",
+              // }}
+              className={`mt-2 mb-4 angle-down-icon ${
+                isVisible ? "rotate" : ""
+              }`}
+              onClick={toggleVisibility}
             />
-            <PriceListCard />
+            {isVisible && <PriceListCard />}
           </div>
         </div>
 
         <div
           className="row mx-0 justify-content-end p-0 "
           style={{
-            background: "linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)",
+            background:
+              "linear-gradient(to right, #000000 14%, rgb(255, 255, 255, 0) 62%)",
             marginTop: "-10%",
             zIndex: 0,
           }}
@@ -259,7 +290,8 @@ export default function Home() {
             <div
               className="row m-0 justify-content-md-start p-0 px-xl-5 px-auto "
               style={{
-                background: "linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)",
+                background:
+                  "linear-gradient(to bottom, rgb(0, 0, 0, 0.7) 25%, rgb(8, 11, 16)   62%)",
                 backdropFilter: "blur(4px)",
                 borderRadius: "20px",
                 TopLeftRadius: 80,
@@ -316,45 +348,53 @@ export default function Home() {
                   cardData={cardData}
                   slidesToShow={slidesToShow}
                 />
+                {isLoad && (
+                  <>
+                    {!isShow ? (
+                      <div className="row pt-5 justify-content-center ">
+                        <ReactPlayer
+                          className="react-player"
+                          url="https://www.youtube.com/watch?v=l-nMKJ5J3Uc"
+                        />
+                      </div>
+                    ) : null}
 
-                {!isShow ? (
-                  <div className="row pt-5 justify-content-center">
-                    <ReactPlayer
-                      className="react-player"
-                      url="https://www.youtube.com/watch?v=l-nMKJ5J3Uc"
+                    <PrimaryCarousel
+                      title="Top Tech Trend"
+                      cardData={cardData}
+                      slidesToShow={slidesToShow}
                     />
-                  </div>
-                ) : null}
-
-                <PrimaryCarousel
-                  title="Top Tech Trend"
-                  cardData={cardData}
-                  slidesToShow={slidesToShow}
-                />
+                  </>
+                )}
+                <div className="d-flex justify-content-center mt-5 mb-4">
+                  <PrimaryButton
+                    label={isLoad ? "Less" : "Show More"}
+                    rightIcon={
+                      <FaAngleDown
+                        className={`angle-down-icon ${isLoad ? "rotate" : ""}`}
+                      />
+                    }
+                    fontSize="1.3rem"
+                    marginRight="5px"
+                    padding="20px 60px"
+                    onClick={handleLoadMore}
+                  />
+                </div>
+                {/* <div
+                  className="row text-center mx-0"
+                  style={{
+                    maxHeight: "5vh",
+                    color: "rgb(255, 219, 43, 0.8)",
+                  }}
+                >
+                  <h5>
+                    Breaking News! Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
+                  </h5>
+                </div> */}
               </div>
             </div>
           </div>
-        </div>
-        <div className="d-flex justify-content-center mt-2 mb-4">
-          <PrimaryButton
-            label="Show More"
-            rightIcon={<FaAngleDown />}
-            fontSize="1.3rem"
-            marginRight="5px"
-            padding="20px 60px"
-          />
-        </div>
-        <div
-          className="row text-center mx-0"
-          style={{
-            maxHeight: "5vh",
-            color: "rgb(255, 219, 43, 0.8)",
-          }}
-        >
-          <h5>
-            Breaking News! Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry.
-          </h5>
         </div>
       </div>
 
