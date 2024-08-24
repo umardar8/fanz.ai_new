@@ -7,16 +7,16 @@ import { LuEye } from "react-icons/lu";
 
 const Tcards = (props) => {
   return (
-    <div className="px-3 ">
-      <div>
+
+    <div className="p-3">
         <img
           src={props.thumb}
           alt=""
-          style={{ height: "37vh", borderRadius: "15px" }}
+          style={{ height: "37vh", width:"100%", borderRadius: '27px', overflow: "hidden", objectFit: "fill", }}
           className="shadow-1 mb-2"
         />
-      </div>
-      <div className="text-family fs-5 fw-normal text-white">{props.head}</div>
+      <div className="text-family fs-4 fw-normal text-white">{props.head}</div>
+
       <div style={{ color: BaseColors.textGrey, fontSize: "0.9rem" }}>
         {props.year}
       </div>
@@ -27,7 +27,7 @@ const Tcards = (props) => {
             className="px-2 text-family fw-normal"
             style={{ color: BaseColors.yellow, fontSize: "0.8rem" }}
           >
-            7.3
+            {props.rating}
           </div>
         </div>
         <div className="d-flex align-items-center">

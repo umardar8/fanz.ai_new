@@ -3,22 +3,24 @@ import useSWR from "swr";
 import WeatherCard from "../cards/weather-card";
 import "../../App.css";
 
-const WeatherPanel = () => {
-  // location of user for use in API call.
-  const [latitude, setLatitude] = useState(25.0762789);
-  const [longitude, setLongitude] = useState(54.8971371);
+const WeatherPanel = ( props ) => {
 
-  // handle mobile view
-  const [isShow, setIsShow] = useState(false);
+    const { cardClassName } = props;
+    // location of user for use in API call.
+    const [latitude, setLatitude] = useState(25.3199447);
+    const [longitude, setLongitude] = useState(55.5462772);
 
-  // get current location of visitor.
-  navigator.geolocation.getCurrentPosition(success, err);
+    // handle mobile view
+    const [isShow, setIsShow] = useState(false);
 
-  function success(position) {
-    setLatitude(position.coords.latitude);
-    setLongitude(position.coords.longitude);
-    console.log("latitude: ", latitude);
-    console.log("longitude: ", longitude);
+    // get current location of visitor.
+    navigator.geolocation.getCurrentPosition(success, err)
+
+    function success(position) {
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+        console.log('latitude: ', latitude);
+        console.log('longitude: ', longitude);
   }
 
   function err() {
@@ -131,68 +133,88 @@ const WeatherPanel = () => {
       var nextHour = (currentHour + forecastNum) % 24;
       index = nextHour < 0 ? 24 + nextHour : nextHour;
     }
-    return index;
-  };
 
-  var cityName = weather.location.name;
-  var current = weather.current;
-  var forecast1 =
-    weather.forecast.forecastday[getIndex(1, "d")].hour[getIndex(1, "h")];
-  var forecast2 =
-    weather.forecast.forecastday[getIndex(2, "d")].hour[getIndex(2, "h")];
-  var forecast3 =
-    weather.forecast.forecastday[getIndex(3, "d")].hour[getIndex(3, "h")];
-  var forecast4 =
-    weather.forecast.forecastday[getIndex(4, "d")].hour[getIndex(4, "h")];
+    const getIndex = (forecastNum, type) => {
+        var [date, time] = weather.location.localtime.split(" ");
+        var [hour, min] = time.split(":");
+        var currentHour = parseInt(hour);
+        var index
+        if (type === 'd') {            
+            if (forecastNum===1) { index = (hour===23) ? 1 : 0; }
+            if (forecastNum===2) { index = (hour>=22) ? 1 : 0; }
+            if (forecastNum===3) { index = (hour>=21) ? 1 : 0; }
+            if (forecastNum===4) { index = (hour>=20) ? 1 : 0; }
+        }
+        if (type === 'h') {
+            var nextHour = (currentHour + forecastNum) % 24;
+            index = nextHour < 0 ? 24 + nextHour : nextHour;
+        }
+        return index;
+    }
 
-  return (
-    <div className="weatherPanel">
-      {!longitude ? (
-        <p>
-          unable to fetch location.. please allow in the popup or reload your
-          page.
-        </p>
-      ) : (
-        <>
-          <WeatherCard
-            name={cityName}
-            temp={current.temp_f}
-            icon={current.condition.icon}
-            date={format(weather.location.localtime, "d")}
-            time={format(weather.location.localtime, "t")}
-          />
-          <WeatherCard
-            name={cityName}
-            temp={forecast1.temp_f}
-            icon={forecast1.condition.icon}
-            date={format(forecast1.time, "d")}
-            time={format(forecast1.time, "t")}
-          />
-          <WeatherCard
-            name={cityName}
-            temp={forecast2.temp_f}
-            icon={forecast2.condition.icon}
-            date={format(forecast2.time, "d")}
-            time={format(forecast2.time, "t")}
-          />
-          <WeatherCard
-            name={cityName}
-            temp={forecast3.temp_f}
-            icon={forecast2.condition.icon}
-            date={format(forecast3.time, "d")}
-            time={format(forecast3.time, "t")}
-          />
-          <WeatherCard
-            name={cityName}
-            temp={forecast4.temp_f}
-            icon={forecast2.condition.icon}
-            date={format(forecast4.time, "d")}
-            time={format(forecast4.time, "t")}
-          />
-        </>
-      )}
-    </div>
-  );
+    var cityName = weather.location.name;
+    var current = weather.current;
+    var forecast1 = weather.forecast.forecastday[getIndex(1,'d')].hour[getIndex(1,'h')];
+    var forecast2 = weather.forecast.forecastday[getIndex(2,'d')].hour[getIndex(2,'h')];
+    var forecast3 = weather.forecast.forecastday[getIndex(3,'d')].hour[getIndex(3,'h')];
+    var forecast4 = weather.forecast.forecastday[getIndex(4,'d')].hour[getIndex(4,'h')];
+
+    return (
+        <div className={cardClassName}
+            style={{
+                borderRadius: "20px",
+                background: "rgb(33, 48, 67, 0.8)",
+                padding: "15px",
+                color: "white",
+                fontFamily: "Montserrat",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+            }}
+        >
+            {!longitude ? (
+                <p>unable to fetch location.. please allow in the popup or reload your page.</p>
+            ) : (
+              <>
+                <WeatherCard
+                  name={cityName}
+                  temp={current.temp_f}
+                  icon={current.condition.icon}
+                  date={format(weather.location.localtime, "d")}
+                  time={format(weather.location.localtime, "t")}
+                />
+                <WeatherCard
+                  name={cityName}
+                  temp={forecast1.temp_f}
+                  icon={forecast1.condition.icon}
+                  date={format(forecast1.time, "d")}
+                  time={format(forecast1.time, "t")}
+                />
+                <WeatherCard
+                  name={cityName}
+                  temp={forecast2.temp_f}
+                  icon={forecast2.condition.icon}
+                  date={format(forecast2.time, "d")}
+                  time={format(forecast2.time, "t")}
+                />
+                <WeatherCard
+                  name={cityName}
+                  temp={forecast3.temp_f}
+                  icon={forecast2.condition.icon}
+                  date={format(forecast3.time, "d")}
+                  time={format(forecast3.time, "t")}
+                />
+                <WeatherCard
+                  name={cityName}
+                  temp={forecast4.temp_f}
+                  icon={forecast2.condition.icon}
+                  date={format(forecast4.time, "d")}
+                  time={format(forecast4.time, "t")}
+                />
+              </>
+            )}
+          </div>
+        );
 };
 
 export default WeatherPanel;

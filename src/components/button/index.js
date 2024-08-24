@@ -18,6 +18,7 @@ export default function PrimaryButton(props) {
     onClick,
     btnWidth,
     btnClassName,
+    borderRadius,
   } = props;
 
   return (
@@ -29,7 +30,7 @@ export default function PrimaryButton(props) {
               background: background ? background : BaseColors.purple,
               color: BaseColors.white,
               minWidth: "120px",
-              borderRadius: 25,
+              borderRadius: borderRadius ? borderRadius : 25,
               fontFamily: `"Montserrat", sans-serif`,
               fontSize: fontSize ? fontSize : `1rem`,
               marginRight: marginRight ? marginRight : "none",
