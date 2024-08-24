@@ -131,7 +131,7 @@ export default function PriceListCard(props) {
             size={24}
             style={{ color: "white", backgroundColor: "transparent" }}
           />
-        </div>
+        </div> */}
 
         <div
           style={{

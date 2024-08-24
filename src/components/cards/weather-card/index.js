@@ -37,7 +37,6 @@ const WeatherCard = ({ name, temp, icon, date, time }) => {
             {date}
           </div>
         </div>
-      </div>
       {/* </div> */}
     </div>
   );
