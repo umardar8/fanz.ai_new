@@ -15,6 +15,7 @@ import { background, Spinner, useToast } from "@chakra-ui/react";
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import PrimaryModal from "../../components/modal";
 import ShowMessage from "../../config/toast";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function WebAuth() {
   const toast = useToast();
@@ -123,6 +124,10 @@ export default function WebAuth() {
     setIsShowReset(true);
   };
 
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <Avatar src="https://bit.ly/dan-abramov" size="md" onClick={showModal}>
@@ -134,10 +139,10 @@ export default function WebAuth() {
         styles={{ minHeight: "95vh" }}
         Modalbody={
           <>
-            <div className="row m-0 " style={{ background: "transparent" }}>
+            <div className="row m-0" style={{ background: "transparent" }}>
               <div
-                className="col-12 col-md-7 py-5 d-flex flex-column align-items-center"
-                style={{ background: "rgb(8, 11, 16)", height: "100%" }}
+                className="col-12 col-md-7 py-3 d-flex flex-column align-items-center justify-content-center authBackground position-relative"
+                style={{ minHeight: "90vh" }}
               >
                 <div
                   className={
@@ -160,6 +165,7 @@ export default function WebAuth() {
                     <>
                       <div className="pt-3 pb-2 w-75 ">
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           label="Email"
                           placeholder="Enter your Email"
                           type="text"
@@ -168,7 +174,7 @@ export default function WebAuth() {
                           onChange={(e) => fillModel("email", e.target.value)}
                         />
                       </div>
-                      <div className="py-3">
+                      <div className="py-3 mb-3">
                         <PrimaryButton
                           onClick={handleReset}
                           label={
@@ -195,37 +201,44 @@ export default function WebAuth() {
                     <>
                       <div className="pt-3 pb-2 w-75 ">
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           label="Email"
-                          placeholder="Enter your Email"
+                          placeholder="abc@gmail.com"
                           type="text"
                           inputWidth={"100%"}
                           value={model.password ?? ""}
+                          disabled={true}
                           onChange={(e) => fillModel("email", e.target.value)}
                         />
                       </div>
                       <div className="test-start">OTP</div>
                       <div className="pt-3 pb-2 w-75 d-flex justify-content-between px-3">
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           placeholder="0"
                           maxLength={1}
                           inputStyle={styles.OtpInput}
                         />
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           placeholder="0"
                           maxLength={1}
                           inputStyle={styles.OtpInput}
                         />
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           placeholder="0"
                           maxLength={1}
                           inputStyle={styles.OtpInput}
                         />
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           placeholder="0"
                           maxLength={1}
                           inputStyle={styles.OtpInput}
                         />
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           placeholder="0"
                           maxLength={1}
                           inputStyle={styles.OtpInput}
@@ -256,9 +269,10 @@ export default function WebAuth() {
                     </>
                   )) || (
                     <>
-                      <h2 style={styles.title}>signIn to your Account</h2>
+                      <h2 style={styles.title}>Sign In to your Account</h2>
                       <div className="py-3 w-md-auto w-75 ">
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           label="Email"
                           placeholder="Enter your Email address"
                           type="email"
@@ -269,6 +283,7 @@ export default function WebAuth() {
                       </div>
                       <div className="pt-3 pb-2 w-75 ">
                         <InputField
+                          background="rgba(0, 0, 0, 0.4)"
                           label="Password"
                           placeholder="Enter your Password"
                           type="password"
@@ -282,10 +297,14 @@ export default function WebAuth() {
                       <div className="w-75 pe-3 pb-1">
                         <p
                           onClick={handleForget}
-                          style={{ color: BaseColors.light_grey }}
-                          className="fs-6 text-end"
+                          style={{
+                            color: BaseColors.light_grey,
+                            fontSize: "12px",
+                            fontStyle: "italic",
+                          }}
+                          className="text-end"
                         >
-                          forget password?
+                          Forget Password?
                         </p>
                       </div>
                       <div className="py-3">
@@ -311,9 +330,11 @@ export default function WebAuth() {
                       </div>
 
                       <p
-                        className="py-3"
+                        className="pb-3"
                         style={{
+                          fontSize: "16px",
                           color: BaseColors.white,
+                          fontStyle: "italic",
                         }}
                       >
                         Don't have an account yet?{" "}
@@ -333,6 +354,7 @@ export default function WebAuth() {
                     </h2>
                     <div className="py-1 w-md-auto w-75  d-flex">
                       <InputField
+                        background="rgba(0, 0, 0, 0.4)"
                         label="First Name"
                         placeholder="Enter your First Name"
                         type="text"
@@ -341,6 +363,7 @@ export default function WebAuth() {
                         onChange={(e) => fillModel("firstname", e.target.value)}
                       />
                       <InputField
+                        background="rgba(0, 0, 0, 0.4)"
                         label="Last Name"
                         placeholder="Enter your Last Name"
                         type="text"
@@ -351,6 +374,7 @@ export default function WebAuth() {
                     </div>
                     <div className="py-3 w-md-auto w-75 ">
                       <InputField
+                        background="rgba(0, 0, 0, 0.4)"
                         label="Email"
                         placeholder="Enter your Email address"
                         type="email"
@@ -361,6 +385,7 @@ export default function WebAuth() {
                     </div>
                     <div className="py-3 w-75 ">
                       <InputField
+                        background="rgba(0, 0, 0, 0.4)"
                         label="Password"
                         placeholder="Enter your Password"
                         type="password"
@@ -392,9 +417,11 @@ export default function WebAuth() {
                     </div>
 
                     <p
-                      className="py-1"
+                      className="pb-1"
                       style={{
+                        fontSize: "16px",
                         color: BaseColors.white,
+                        fontStyle: "italic",
                       }}
                     >
                       Already Have Account?{" "}
@@ -409,20 +436,21 @@ export default function WebAuth() {
                 )}
                 <p
                   style={{
-                    fontSize: "18px",
+                    fontSize: "14px",
                     color: BaseColors.white,
+                    fontStyle: "italic",
                   }}
                 >
-                  - OR -
+                  - OR Sign In with -
                 </p>
-                <div className="row m-0">
+                <div className="row m-0 py-3">
                   <div className="col-4">
                     <PrimaryButton
-                      label="signIn with Google"
+                      label="Google"
                       variant="outline"
                       colorScheme={BaseColors.light_grey}
                       size="sm"
-                      background="transparent"
+                      background="rgba(0, 0, 0, 0.4)"
                       leftIcon={
                         <img
                           src={iconGoogle}
@@ -436,11 +464,11 @@ export default function WebAuth() {
                   </div>
                   <div className="col-4">
                     <PrimaryButton
-                      label="signIn with Facebook"
+                      label="Facebook"
                       variant="outline"
                       colorScheme={BaseColors.light_grey}
                       size="sm"
-                      background="transparent"
+                      background="rgba(0, 0, 0, 0.4)"
                       leftIcon={
                         <img
                           src={iconFacebook}
@@ -454,11 +482,11 @@ export default function WebAuth() {
                   </div>
                   <div className="col-4">
                     <PrimaryButton
-                      label="signIn with Linkedin"
+                      label="Linkedin"
                       variant="outline"
                       colorScheme={BaseColors.light_grey}
                       size="sm"
-                      background="transparent"
+                      background="rgba(0, 0, 0, 0.4)"
                       leftIcon={
                         <img
                           src={iconLinkedin}
@@ -471,13 +499,27 @@ export default function WebAuth() {
                     />
                   </div>
                 </div>
+                <div
+                  className="position-absolute"
+                  style={{
+                    top: "25px",
+                    // left: '95%',
+                    right: "25px",
+                  }}
+                >
+                  <AiOutlineClose
+                    onClick={handleCancel}
+                    color="white"
+                    size={25}
+                  />
+                </div>
               </div>
 
               <div
                 className="col-5 text-family d-none d-md-block"
                 style={styles.rightTextBlock}
               >
-                <div className="row h-100 align-items-center">
+                <div className="row h-100 align-items-center ">
                   <div
                     className="p-5 col d-flex align-items-center"
                     style={{
@@ -513,7 +555,7 @@ const styles = {
   authSocialButton: {
     Radius: "12px",
     color: BaseColors.light_grey,
-    background: "rgb(8, 11, 16)",
+    background: "rgba(0, 0, 0, 0.4)",
     padding: "20px 10px",
   },
   rightTextBlock: {
@@ -523,9 +565,9 @@ const styles = {
   },
   title: {
     fontWeight: "700",
-    fontSize: 22,
+    fontSize: 18,
     color: BaseColors.white,
-    padding: 25,
+    padding: 15,
   },
   title2: {
     fontWeight: "700",

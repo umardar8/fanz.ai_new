@@ -7,6 +7,7 @@ import iconLinkedin from "./iconLinkedin.png";
 import ads from "./ads.jpeg";
 import mi from "./mi.png";
 import placeholderBanner from "./placeholder.png";
+import wishlist from "./package.png";
 
 export {
   logo,
@@ -18,4 +19,5 @@ export {
   ads,
   mi,
   placeholderBanner,
+  wishlist,
 };
