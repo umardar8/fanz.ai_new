@@ -15,7 +15,7 @@ export const Styles = {
   headerItem2: {
     color: BaseColors.white,
     fontWeight: "300",
-    fontSize: "1.4rem",
+    fontSize: "0.9rem",
     fontFamily: `Teko,sans-serif`,
     height: "8vh",
     letterSpacing: "0.1rem",

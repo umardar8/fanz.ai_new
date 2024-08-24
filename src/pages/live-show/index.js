@@ -237,6 +237,7 @@ export default function LiveShow() {
               size="lg"
               variant="solid"
               label={x.label}
+              background="rgb(66, 1, 75, 0.7)"
               btnClassName={`mb-4 ${
                 activeTabs === index ? "live-all-active" : "live-drawer-button"
               } rounded text-start w-100 flex justify-content-start gap-3 text-family fs-5`}

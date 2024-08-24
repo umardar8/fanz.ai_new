@@ -12,7 +12,7 @@ import TopStoryCard from "../../components/cards/top-story-card";
 import { FaStar, FaWifi } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import PrimaryModal from "../../components/modal";
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 
 export default function HomeHeroBanner() {
   const [isSliderHovered, setIsSliderHovered] = useState(false);
@@ -98,7 +98,8 @@ export default function HomeHeroBanner() {
                 leftIcon={<FaWifi />}
               />
               <p className="heading-size-1 fw-900 text-white">
-                Guddu in spotlight after Sunday's power breakdown
+                Guddu in spotlight after Sunday's
+                <br className="d-none d-lg-block" /> power breakdown
               </p>
               <p className="text-1 fw-600 text-white">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -138,9 +139,13 @@ export default function HomeHeroBanner() {
               </div>
               <div className="d-flex justify-content-start ps-4">
                 <div className="d-flex me-3 align-items-center">
-                  <FaStar size={16} color={BaseColors.yellow} className="mb-2" />
+                  <FaStar
+                    size={16}
+                    color={BaseColors.yellow}
+                    className="mb-2"
+                  />
                   <h5
-                    className="px-2 text-family fs-4 fw-normal-2"
+                    className="px-2 text-family fs-5 fw-normal-2"
                     style={{ color: BaseColors.yellow }}
                   >
                     7.3
@@ -190,8 +195,8 @@ export default function HomeHeroBanner() {
               style={{
                 background: "rgb(92, 92, 92, 0.7)",
                 height: "45%",
-                borderTopLeftRadius: '25px',
-                borderTopRightRadius: '25px',
+                borderTopLeftRadius: "25px",
+                borderTopRightRadius: "25px",
                 padding: 20,
                 width: isDesktop ? "32%" : "25%",
               }}
@@ -204,7 +209,6 @@ export default function HomeHeroBanner() {
               <TopStoryCard />
             </div>
           </div>
-         
 
           <div
             className="py-5 row m-0 px-0 position-absolute"
@@ -216,8 +220,8 @@ export default function HomeHeroBanner() {
               borderBottomLeftRadius: 25,
               transition: "width 0.3s ease",
               right: 0,
-              left: 'auto',
-              top: '30%'
+              left: "auto",
+              top: "30%",
             }}
           >
             <RiGroupLine color={BaseColors.textGrey} size={25} />

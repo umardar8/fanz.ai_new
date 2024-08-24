@@ -12,6 +12,7 @@ import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import PrimaryModal from "../../components/modal";
 import WebAuth from "../../pages/auth";
 import PrimaryButton from "../../components/button";
+import { RiMenu3Fill } from "react-icons/ri";
 
 export default function WebHeader() {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ export default function WebHeader() {
           className={
             colorChange
               ? "navbar colorChange px-5 py-1 py-lg-0"
-              : "navbar px-5 py-1 py-lg-0 gradient-back"
+              : "navbar px-2 px-md-5 py-1 py-lg-0 gradient-back"
           }
           variant={colorChange ? "dark" : "light"}
           style={Styles.headerDiv}
@@ -66,7 +67,7 @@ export default function WebHeader() {
               <img src={logo} height="55rem" width="auto" />
             </Navbar.Brand>
 
-            <Nav className="col-3 col-md-8 justify-content-between align-items-center headerItem">
+            <Nav className="col col-md-8 justify-content-end justify-content-md-between align-items-center headerItem">
               {/* <header> */}
 
               <Link
@@ -78,7 +79,7 @@ export default function WebHeader() {
               </Link>
               <Link
                 className="d-none d-md-block border-none headerItem headerItemDot"
-                to="/web-dashboard"
+                to="/categories"
                 style={Styles.headerItem}
               >
                 Categories
@@ -115,6 +116,7 @@ export default function WebHeader() {
                     padding: "15px 20px",
                     background: BaseColors.medium_grey,
                     color: BaseColors.white,
+                    fontSize: "0.8rem",
                   }}
                 />
               </Link>
@@ -194,32 +196,36 @@ export default function WebHeader() {
           </div>
         ) : null}
         <Navbar
-          data-bs-theme="dark"
+          data-bs-theme="light"
           collapseOnSelect
           expand="lg"
-          className=" d-block d-md-none text-white mx-3 px-2 mt-1 mb-0 py-0 rounded-1"
-          style={{
-            top: -15,
-            backgroundColor: "rgb(8, 11, 16)",
-            borderRadius: "2px",
-          }}
+          className=" d-block d-md-none text-white mx-3 mt-1 mb-0 py-0 rounded-1 "
+          bg="rgba(0, 0, 0, 0)"
+          // className=" d-block d-md-none text-white mx-3 px-2 mt-1 mb-0 py-0 rounded-1"
+          // style={{
+          //   background: "red",
+          // }}
         >
-          <Container className="py-3 justify-content-end">
-            <Navbar.Toggle aria-controls="responsive-navbar-nav " />
-            <Navbar.Collapse id="responsive-navbar-nav" className="mb-5 pt-0">
+          {/* <navbar className=" d-block d-md-none text-white mx-3 px-2 mt-1 mb-0 py-0 rounded-1"> */}
+          <Container className="py-3 justify-content-end miniHeaderBg">
+            <Navbar.Toggle aria-controls=" text-light bg-light">
+              <RiMenu3Fill color="white" />
+            </Navbar.Toggle>
+            <Navbar.Collapse className="mb-5 pt-0">
               <Nav className="me-auto ">
                 <Nav.Link style={Styles.headerItem2}>
                   <InputField
                     placeholder="SEARCH"
-                    // rightIcon={<LuSearch size={20} />}
+                    rightIcon={<LuSearch size={20} />}
                     inputStyle={{
                       border: `1px solid ${BaseColors.medium_grey}`,
                       borderRadius: 25,
-                      width: "250px",
+                      width: "100%",
                       height: "5vh",
                       padding: 15,
                       background: BaseColors.medium_grey,
                       color: BaseColors.white,
+                      fontSize: "0.8rem",
                     }}
                   />
                 </Nav.Link>
@@ -250,6 +256,7 @@ export default function WebHeader() {
               </Nav>
             </Navbar.Collapse>
           </Container>
+          {/* </navbar> */}
         </Navbar>
 
         {/* header News */}

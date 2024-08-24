@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { ads } from "../../../assets";
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function AdsCard(props) {
   const { btnClassName } = props;
+  const [isVisible, setIsVisible] = useState(true);
+
   const addCard = {
     maxWidth: " 22vw",
     borderRadius: "20px",
@@ -15,32 +18,44 @@ export default function AdsCard(props) {
     justifyContent: "center",
   };
 
+  //=============== Toggle igation ===============//
+  const toggleVisibility = () => {
+    setIsVisible(false);
+  };
+
   return (
     <>
-      <div className={btnClassName ? btnClassName : "card adsCard"} style={addCard}>
-        <div className="card-body">
-          <div>
-            <p style={{ textAlign: "right", color: "yellow" }}>ADS</p>
+      {isVisible && (
+        <div
+          className={btnClassName ? btnClassName : "card adsCard"}
+          style={addCard}
+        >
+          <div className="ms-auto">
+            <AiOutlineClose size={20} onClick={toggleVisibility} />
           </div>
-          <h5
-            className="card-title"
-            style={{
-              fontSize: "2.5rem",
-              fontWeight: "bold",
-              textAlign: "center",
-              color: "white",
-            }}
-          >
-            TRY OUR NEW PRODUCT
-          </h5>
-          <img
-            src={ads}
-            className="card-img-top"
-            alt="Advertisement"
-            style={{ width: " 283px", height: " 280px" }}
-          />
+          <div className="card-body">
+            <div>
+              <p style={{ textAlign: "right", color: "yellow" }}>ADS </p>
+            </div>
+            <h5
+              className="card-title"
+              style={{
+                fontWeight: "bold",
+                textAlign: "center",
+                color: "white",
+              }}
+            >
+              TRY OUR NEW PRODUCT
+            </h5>
+            <img
+              src={ads}
+              className="card-img-top"
+              alt="Advertisement"
+              style={{ width: " 283px", height: " 280px" }}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

@@ -7,6 +7,7 @@ import { MdOutlineRssFeed } from "react-icons/md";
 import Users from "../users";
 import LiveStream from "../live-stream";
 import Dashboard from "./main-dashboard";
+import NotFound from "../404";
 
 const pagesArr = [
   {
@@ -39,6 +40,7 @@ export default function SuperAdminDashboard() {
             <Route path="" element={<Dashboard />} />
             <Route path="live-stream" element={<LiveStream />} />
             <Route path="users" element={<Users />} />
+            <Route path="*" element={<NotFound />} />
             {/* <Route path="" element={<Institute />} />
           <Route path="user-registration" element={<UserRegistration />} />
           <Route path="*" element={<NotFound />} /> */}

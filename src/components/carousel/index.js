@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import Tcards from "../cards/trend-card";
+import { FcLikePlaceholder, FcLike } from "react-icons/fc";
 
 export default function PrimaryCarousel(props) {
   const { title, autoplay, autoplaySpeed, cardData, slidesToShow } = props;
@@ -51,6 +52,7 @@ export default function PrimaryCarousel(props) {
         }}
       >
         <div className="col-11 ">
+
           <div
             className="heading-size-1 fw-700 text-white py-3 text-uppercase"
           >
@@ -58,7 +60,19 @@ export default function PrimaryCarousel(props) {
           </div>
           <Slider ref={setSliderRef} {...sliderSettings}>
             {cardData.map((data) => {
-              return <Tcards key={data.id} {...data} />;
+              return (
+                <Tcards
+                  key={data.id}
+                  {...data}
+                  islike={
+                    data?.islike === false ? (
+                      <FcLikePlaceholder size={17} />
+                    ) : (
+                      <FcLike size={17} />
+                    )
+                  }
+                />
+              );
             })}
           </Slider>
         </div>

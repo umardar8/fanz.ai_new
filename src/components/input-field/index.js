@@ -25,15 +25,28 @@ export default function InputField(props) {
     maxLength,
     inputHeight,
     padding,
-    background
+    background,
+    disabled,
+    labelStyle,
+    inputClassName,
+    outline,
   } = props;
 
   return (
     <>
       <div className={label ? "row m-0" : null}>
         {label ? (
-          <div className="col mb-1">
-            <div className={isBlack ? "text-secondary" : "text-light"} style={isBlack ? Styles.headerItem3 : Styles.headerItem}>
+          <div className="col mb-1 ms-1">
+            <div
+              className={`${isBlack ? "text-secondary" : "text-light"}`}
+              style={
+                labelStyle
+                  ? labelStyle
+                  : isBlack
+                  ? Styles.headerItem3
+                  : Styles.headerItem
+              }
+            >
               {label}
             </div>{" "}
           </div>
@@ -54,8 +67,11 @@ export default function InputField(props) {
                     width: inputWidth ? inputWidth : "250px",
                     height: inputHeight ? inputHeight : "5vh",
                     padding: padding ? padding : "15px 20px",
-                    background: background ? background : BaseColors.medium_light_grey,
+                    background: background
+                      ? background
+                      : BaseColors.medium_light_grey,
                     color: BaseColors.white,
+                    outline: outline ? outline : "auto",
                   }
             }
             placeholder={placeholder}
@@ -64,9 +80,15 @@ export default function InputField(props) {
             value={value}
             onChange={onChange}
             maxLength={maxLength}
+            disabled={disabled}
+            className={inputClassName}
           />
           {rightIcon ? (
-            <InputRightElement pointerEvents="none">
+            <InputRightElement
+              pointerEvents="none"
+              className="d-flex justify-content-center align-items-center"
+              height="99%"
+            >
               {rightIcon}
             </InputRightElement>
           ) : null}
