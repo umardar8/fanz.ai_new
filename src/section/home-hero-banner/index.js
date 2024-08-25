@@ -98,8 +98,7 @@ export default function HomeHeroBanner() {
                 leftIcon={<FaWifi />}
               />
               <p className="heading-size-1 fw-900 text-white">
-                Guddu in spotlight after Sunday's
-                <br className="d-none d-lg-block" /> power breakdown
+                Guddu in spotlight after Sunday's power breakdown
               </p>
               <p className="text-1 fw-600 text-white">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
