@@ -269,6 +269,8 @@ export default function WebHeader() {
               color: "rgb(255, 219, 43)",
               overflow: "hidden",
               marginTop: -15,
+              borderBottomLeftRadius: "10px",
+              borderBottomRightRadius: "10px",
             }}
           >
             <h5
