@@ -3,6 +3,9 @@
 ## **Objective:**
 Developing a infortainment content platform with AI based recommendation system that browses all the available content and shows the best performing content.
 
+## **Update: Frontend Completed:**
+![Screenshot of the homepage of fanz.ai platform.](./public/fanz-ai-front-end.png)
+
 ## **Content:**
 - **Health:**
 Content that promotes medical well-being and healthy living such as "What happens if you take 10gm of sugar daily etc"
